@@ -1,0 +1,11 @@
+# Node + garbage
+node_modules
+
+# Build + private
+.next
+private
+
+# Server files
+install
+nginx.conf
+process.json
