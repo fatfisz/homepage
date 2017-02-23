@@ -7,25 +7,25 @@ export default class extends Document {
       <html>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+          <style>{`
+            html, body, #__next, [data-reactroot] {
+              height: 100%;
+            }
+
+            html {
+              font-family: sans-serif;
+            }
+
+            body {
+              color: #212121;
+              margin: 0;
+            }
+
+            p {
+              margin: 1rem 0;
+            }
+          `}</style>
         </Head>
-        <style jsx global>{`
-          html, body, #__next, [data-reactroot] {
-            height: 100%;
-          }
-
-          html {
-            font-family: sans-serif;
-          }
-
-          body {
-            color: #212121;
-            margin: 0;
-          }
-
-          p {
-            margin: 1rem 0;
-          }
-        `}</style>
 
         <body>
           <Main />
