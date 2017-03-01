@@ -38,6 +38,7 @@ export default function Index() {
 
         .main {
           flex: 0 0 auto;
+          padding: 1rem;
         }
       `}</style>
     </div>
