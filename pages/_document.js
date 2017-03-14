@@ -8,10 +8,6 @@ export default class extends Document {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
           <style>{`
-            html, body, #__next, [data-reactroot] {
-              height: 100%;
-            }
-
             html {
               font-family: sans-serif;
             }
@@ -28,7 +24,20 @@ export default class extends Document {
         </Head>
 
         <body>
-          <Main />
+          <div className="main-container">
+            <Main />
+
+            <style jsx>{`
+              .main-container {
+                height: 100%;
+                left: 0;
+                overflow-x: auto;
+                position: fixed;
+                top: 0;
+                width: 100%;
+              }
+            `}</style>
+          </div>
           <NextScript />
         </body>
       </html>

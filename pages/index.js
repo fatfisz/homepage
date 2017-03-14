@@ -1,9 +1,11 @@
 import Head from 'next/head';
 
+import Center from 'components/center';
+
 
 export default function Index() {
   return (
-    <div className="main-container">
+    <Center isAbsolute>
       <Head>
         <title>FatFisz's humble site</title>
       </Head>
@@ -28,19 +30,10 @@ export default function Index() {
       </main>
 
       <style jsx>{`
-        .main-container {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-          justify-content: center;
-        }
-
         .main {
-          flex: 0 0 auto;
           padding: 1rem;
         }
       `}</style>
-    </div>
+    </Center>
   );
 }
