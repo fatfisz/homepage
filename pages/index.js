@@ -1,16 +1,13 @@
 import Head from 'next/head';
 
 import Center from 'components/center';
+import wrapBody from 'components/wrap-body';
 
 
-export default function Index() {
+function Index() {
   return (
     <Center isAbsolute>
-      <Head>
-        <title>FatFisz's humble site</title>
-      </Head>
-
-      <main className="main">
+      <div className="main">
         <h2>
           Hi, I'm Rafał.
         </h2>
@@ -27,7 +24,7 @@ export default function Index() {
         <p>
           More content coming soon.
         </p>
-      </main>
+      </div>
 
       <style jsx>{`
         .main {
@@ -37,3 +34,5 @@ export default function Index() {
     </Center>
   );
 }
+
+export default wrapBody(Index);
