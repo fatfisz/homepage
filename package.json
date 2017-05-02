@@ -1,17 +1,20 @@
 {
   "dependencies": {
+    "babel-plugin-jsx-svg-inject": "^4.0.1",
     "babel-plugin-module-resolver": "^2.5.0",
     "classnames": "^2.2.5",
     "common-tags": "^1.4.0",
     "glob": "^7.1.1",
     "highlight.js": "^9.10.0",
-    "next": "beta",
+    "next": "^2.3.0-alpha1",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "svgo": "^0.7.2"
   },
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build-images": "svgo -f images/raw -o images --config=.svgo"
   }
 }

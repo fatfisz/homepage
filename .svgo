@@ -1,0 +1,12 @@
+{
+  "floatPrecision": 2,
+  "multipass": true,
+  "plugins": [
+    {
+      "convertPathData": {
+        "makeArcs": false
+      }
+    },
+    { "sortAttrs": true }
+  ]
+}

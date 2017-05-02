@@ -3,6 +3,7 @@
     "next/babel"
   ],
   "plugins": [
+    ["jsx-svg-inject", { "root": "./images", "unwrap": true }],
     ["module-resolver", { "root": ["."] }]
   ]
 }
