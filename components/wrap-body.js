@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import Container from 'components/container';
 import Header from 'components/header';
+import GlobalStyles from 'components/global-styles';
 import Title from 'components/title';
 
 
@@ -23,28 +24,7 @@ export default WrappedComponent => {
           </Container>
         </main>
 
-        <style jsx global>{`
-          * {
-            box-sizing: border-box;
-          }
-
-          html {
-            font-family: Lato, sans-serif;
-          }
-
-          body {
-            color: #424242;
-            margin: 0;
-          }
-
-          main {
-            margin: 4rem 0;
-          }
-
-          p {
-            margin: 1rem 0;
-          }
-        `}</style>
+        <GlobalStyles />
       </div>
     );
   }
