@@ -1,27 +1,28 @@
 import Head from 'next/head';
 
+import Image from 'components/image';
 import wrapBody from 'components/wrap-body';
 
 
 function Index() {
   return (
-    <div>
+    <div className="index">
       <h2>
         Hi, I'm Rafał.
       </h2>
-      <p>
-        I once had many talents. Now I build websites.
-      </p>
-      <p>
-        I'm currently trying to make <a href="https://codility.com/">Codility</a> more awesome.
-      </p>
-      <p>
-        I have some projects on GitHub: <a href="https://github.com/fatfisz">@fatfisz</a>
-      </p>
-      <br />
-      <p>
-        More content coming soon.
-      </p>
+
+      <Image svgName="chybaryba" style={{ width: '100%', height: '100%' }} />
+
+      <h3>
+        Some people call me FatFisz.
+      </h3>
+
+      <style jsx>{`
+        .index {
+          height: 60vh;
+          text-align: center;
+        }
+      `}</style>
     </div>
   );
 }

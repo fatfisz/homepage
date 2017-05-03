@@ -16,7 +16,7 @@ export default WrappedComponent => {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" />
         </Head>
 
-        <Header {...props} />
+        <Header />
 
         <main>
           <Container>
