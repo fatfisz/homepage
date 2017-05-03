@@ -11,9 +11,8 @@ export default function Container({ children }) {
           margin-left: auto;
           margin-right: auto;
           max-width: 100%;
-          padding-left: 15px;
-          padding-right: 15px;
-          position: relative;
+          padding-left: 16px;
+          padding-right: 16px;
         }
 
         @media (min-width: 576px) {
