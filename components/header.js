@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import Container from 'components/container';
 import Image from 'components/image';
-import { amber200, amber300, grey800, grey900 } from 'constants/colors';
+import { blue200, blue300, grey800, grey900 } from 'constants/colors';
 
 
 const links = [
@@ -31,7 +31,7 @@ export default function Header() {
 
       <style jsx>{`
         .navigation-background {
-          background-color: ${amber200};
+          background-color: ${blue200};
         }
 
         .navigation {
@@ -64,7 +64,7 @@ export default function Header() {
           text-decoration: none;
         }
         .link:hover {
-          background-color: ${amber300};
+          background-color: ${blue300};
         }
         .link:focus,.link:hover {
           color: ${grey900};
