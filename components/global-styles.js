@@ -1,9 +1,6 @@
-import {
-  grey800,
-  lightBlue700,
-  lightBlue800,
-  lightBlue900,
-} from 'constants/colors';
+import Color from 'color';
+
+import { grey800, lightBlue700 } from 'constants/colors';
 
 export default function GlobalStyles() {
   return (
@@ -31,10 +28,10 @@ export default function GlobalStyles() {
         text-decoration: underline;
       }
       a:focus, a:hover {
-        color: ${lightBlue800};
+        color: ${Color(lightBlue700).darken(0.1)};
       }
       a:active {
-        color: ${lightBlue900};
+        color: ${Color(lightBlue700).darken(0.2)};
       }
 
       p, ul {

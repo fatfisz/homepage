@@ -3,6 +3,7 @@
     "babel-plugin-jsx-svg-inject": "^4.0.1",
     "babel-plugin-module-resolver": "^2.5.0",
     "classnames": "^2.2.5",
+    "color": "^1.0.3",
     "common-tags": "^1.4.0",
     "glob": "^7.1.1",
     "highlight.js": "^9.10.0",

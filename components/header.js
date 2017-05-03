@@ -1,8 +1,9 @@
+import Color from 'color';
 import Link from 'next/link';
 
 import Container from 'components/container';
 import Image from 'components/image';
-import { blue200, blue300, grey800, grey900 } from 'constants/colors';
+import { blue200, grey800 } from 'constants/colors';
 
 
 const links = [
@@ -62,12 +63,13 @@ export default function Header() {
           display: block;
           padding: 0 16px;
           text-decoration: none;
+          transition: background-color 0.1s ease;
         }
         .link:hover {
-          background-color: ${blue300};
+          background-color: ${Color(blue200).darken(0.05)};
         }
         .link:focus,.link:hover {
-          color: ${grey900};
+          color: ${Color(grey800).darken(0.1)};
         }
       `}</style>
     </div>
