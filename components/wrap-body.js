@@ -1,8 +1,8 @@
 import Head from 'next/head';
 
 import Container from 'components/container';
-import Header from 'components/header';
 import GlobalStyles from 'components/global-styles';
+import Header from 'components/header';
 import Title from 'components/title';
 
 
@@ -16,6 +16,8 @@ export default WrappedComponent => {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" />
         </Head>
 
+        <GlobalStyles />
+
         <Header />
 
         <main>
@@ -23,8 +25,6 @@ export default WrappedComponent => {
             <WrappedComponent {...props} />
           </Container>
         </main>
-
-        <GlobalStyles />
       </div>
     );
   }
