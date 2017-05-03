@@ -11,15 +11,14 @@ function Index() {
         Hi, I'm Rafał.
       </h2>
 
-      <Image svgName="chybaryba" style={{ width: '100%', height: '100%' }} />
-
       <h3>
         Some people call me FatFisz.
       </h3>
 
+      <Image svgName="chybaryba" style={{ width: '100%', height: '50vh' }} />
+
       <style jsx>{`
         .index {
-          height: 50vh;
           text-align: center;
         }
       `}</style>
