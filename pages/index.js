@@ -19,7 +19,7 @@ function Index() {
 
       <style jsx>{`
         .index {
-          height: 60vh;
+          height: 50vh;
           text-align: center;
         }
       `}</style>
