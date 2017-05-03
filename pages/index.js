@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 import Image from 'components/image';
 import wrapBody from 'components/wrap-body';
@@ -20,6 +21,14 @@ function Index() {
       <h4>
         (here's an image of a fat fish I made)
       </h4>
+
+      <br />
+      <p>
+        For now you can read a bit <Link href="/about" prefetch><a>about me</a></Link>.
+      </p>
+      <p>
+        More content coming soon, I promise.
+      </p>
 
       <style jsx>{`
         .index {
