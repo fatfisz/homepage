@@ -20,11 +20,29 @@ export default WrappedComponent => {
 
         <Header />
 
-        <main>
-          <Container>
-            <WrappedComponent {...props} />
-          </Container>
-        </main>
+        <Container>
+          <div className="main-container">
+            <main className="main">
+              <WrappedComponent {...props} />
+            </main>
+          </div>
+        </Container>
+
+        <style jsx>{`
+          .main-container {
+            background-color: rgba(255, 255, 255, 0.8);
+          }
+          .main-container:before,
+          .main-container:after {
+            content: '';
+            display: table;
+          }
+
+          .main {
+            margin: 4rem 0;
+            padding: 0 1rem;
+          }
+        `}</style>
       </div>
     );
   }

@@ -18,6 +18,7 @@ export default function GlobalStyles() {
       }
 
       body {
+        background-image: url(/static/background.svg);
         color: ${grey800};
         margin: 0;
       }
@@ -34,10 +35,6 @@ export default function GlobalStyles() {
       }
       a:active {
         color: ${lightBlue900};
-      }
-
-      main {
-        margin: 4rem 0;
       }
 
       p, ul {
