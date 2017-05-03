@@ -17,6 +17,10 @@ function Index() {
 
       <Image svgName="chybaryba" style={{ width: '100%', height: '50vh' }} />
 
+      <h4>
+        (here's an image of a fat fish I made)
+      </h4>
+
       <style jsx>{`
         .index {
           text-align: center;
