@@ -12,7 +12,7 @@ export default function Header() {
         <nav className="navigation">
           <img
             className="gravatar"
-            src="http://www.gravatar.com/avatar/dcc938049e3618d715d4e45eeb2cc314"
+            src="https://www.gravatar.com/avatar/dcc938049e3618d715d4e45eeb2cc314"
           />
           <div className="title">
             FatFisz's humble website
