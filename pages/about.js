@@ -15,7 +15,7 @@ function About() {
         I have a wife. <a href="https://www.instagram.com/fixtheworldup/">She can write quite well</a>.
       </p>
       <p>
-        I'm mostly occupied with working on the front-end side.
+        I'm mostly occupied with creating websites, preferably the front-end side of them.
         I'm currently trying to make <a href="https://codility.com/">Codility</a> more awesome.
       </p>
       <p>
