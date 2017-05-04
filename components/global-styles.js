@@ -16,6 +16,7 @@ export default function GlobalStyles() {
 
       body {
         background-image: url(/static/background.svg);
+        background-position: center top;
         color: ${grey800};
         margin: 0;
       }
@@ -32,6 +33,11 @@ export default function GlobalStyles() {
       }
       a:active {
         color: ${Color(indigo300).darken(0.2)};
+      }
+
+      main {
+        margin: 4rem 0;
+        padding: 0 1rem;
       }
 
       p, ul {

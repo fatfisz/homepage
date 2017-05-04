@@ -1,9 +1,9 @@
 import { PropTypes } from 'react';
 
 
-export default function Container({ children }) {
+export default function Container({ children, ...props }) {
   return (
-    <div className="container">
+    <div className="container" {...props}>
       {children}
 
       <style jsx>{`
@@ -13,6 +13,11 @@ export default function Container({ children }) {
           max-width: 100%;
           padding-left: 16px;
           padding-right: 16px;
+        }
+        .container:before,
+        .container:after {
+          content: '';
+          display: table;
         }
 
         @media (min-width: 576px) {
