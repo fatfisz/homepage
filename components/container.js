@@ -13,6 +13,7 @@ export default function Container({ children, ...props }) {
           max-width: 100%;
           padding-left: 16px;
           padding-right: 16px;
+          position: relative;
         }
         .container:before,
         .container:after {
