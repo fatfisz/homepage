@@ -30,7 +30,7 @@ export default WrappedComponent => {
 
         <style jsx>{`
           .main-container {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
           }
           .main-container:before,
           .main-container:after {
