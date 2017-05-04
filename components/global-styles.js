@@ -2,6 +2,7 @@ import Color from 'color';
 
 import { grey800, indigo300 } from 'constants/colors';
 
+
 export default function GlobalStyles() {
   return (
     <style jsx global>{`
