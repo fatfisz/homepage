@@ -1,9 +1,9 @@
 import Head from 'next/head';
 
 import Container from 'components/container';
-import GlobalStyles from 'components/global-styles';
-import Header from 'components/header';
 import Title from 'components/title';
+import GlobalStyles from './global-styles';
+import Header from './header';
 
 
 export default WrappedComponent => {
