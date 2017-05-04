@@ -38,6 +38,12 @@ export default function Header() {
           margin-right: 16px;
           width: 48px;
         }
+        @media (max-width: 575px) {
+          .gravatar {
+            height: 36px;
+            width: 36px;
+          }
+        }
 
         .title {
           font-weight: 700;

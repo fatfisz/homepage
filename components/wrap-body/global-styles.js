@@ -13,6 +13,12 @@ export default function GlobalStyles() {
       html {
         font-family: Lato, sans-serif;
         font-size: 18px;
+        line-height: 1.5;
+      }
+      @media (max-width: 575px) {
+        html {
+          font-size: 16px;
+        }
       }
 
       body {
@@ -40,9 +46,28 @@ export default function GlobalStyles() {
         margin: 4rem 0;
         padding: 0 1rem;
       }
+      @media (max-width: 575px) {
+        main {
+          margin: 2rem 0;
+        }
+      }
 
       p, ul {
         margin: 1rem 0;
+      }
+
+      ul {
+        padding-left: 40px;
+      }
+
+      @media (max-width: 575px) {
+        p, ul {
+          margin: 0.75rem 0;
+        }
+
+        ul {
+          padding-left: 30px;
+        }
       }
 
       li {
