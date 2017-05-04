@@ -1,7 +1,6 @@
 import Color from 'color';
 
 import Container from 'components/container';
-import Image from 'components/image';
 import { grey100 } from 'constants/colors';
 import Menu from './menu';
 
@@ -11,9 +10,10 @@ export default function Header() {
     <div className="navigation-background">
       <Container>
         <nav className="navigation">
-          <div className="gravatar-container">
-            <img className="gravatar" src="http://www.gravatar.com/avatar/dcc938049e3618d715d4e45eeb2cc314" />
-          </div>
+          <img
+            className="gravatar"
+            src="http://www.gravatar.com/avatar/dcc938049e3618d715d4e45eeb2cc314"
+          />
           <div className="title">
             FatFisz's humble website
           </div>
@@ -31,15 +31,11 @@ export default function Header() {
           display: flex;
         }
 
-        .gravatar-container {
-          margin-right: 16px;
-          padding: 8px 0;
-        }
-
         .gravatar {
           border-radius: 50%;
           display: block;
           height: 48px;
+          margin-right: 16px;
           width: 48px;
         }
 
