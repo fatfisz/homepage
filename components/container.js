@@ -20,25 +20,21 @@ export default function Container({ children, ...props }) {
           content: '';
           display: table;
         }
-
         @media (min-width: 576px) {
           .container {
             width: 540px;
           }
         }
-
         @media (min-width: 768px) {
           .container {
             width: 720px;
           }
         }
-
         @media (min-width: 992px) {
           .container {
             width: 960px;
           }
         }
-
         @media (min-width: 1200px) {
           .container {
             width: 1140px;

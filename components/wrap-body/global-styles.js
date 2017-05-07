@@ -67,12 +67,21 @@ export default function GlobalStyles() {
       }
 
       main {
-        margin: 4rem 0;
-        padding: 0 1rem;
+        margin: 2rem 0;
       }
-      @media (max-width: 575px) {
+      @media (min-width: 576px) {
         main {
-          margin: 2rem 0;
+          margin: 3rem 1.5rem;
+        }
+      }
+      @media (min-width: 768px) {
+        main {
+          margin: 4rem 2.5rem;
+        }
+      }
+      @media (min-width: 992px) {
+        main {
+          margin: 4rem 3.5rem;
         }
       }
 
