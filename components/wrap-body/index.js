@@ -20,7 +20,7 @@ export default WrappedComponent => {
 
         <Header />
 
-        <Container style={{ backgroundColor: 'rgba(255, 255, 255, 0.85)' }}>
+        <Container>
           <main>
             <WrappedComponent {...props} />
           </main>
