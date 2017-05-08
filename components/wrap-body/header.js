@@ -15,7 +15,7 @@ export default function Header() {
             src="https://www.gravatar.com/avatar/dcc938049e3618d715d4e45eeb2cc314"
           />
           <div className="title">
-            FatFisz's humble website
+            FatFisz's homepage
           </div>
           <Menu />
         </nav>

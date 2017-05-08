@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { PropTypes } from 'react';
 
 
-const baseTitle = 'FatFisz\'s humble site';
+const baseTitle = 'FatFisz\'s homepage';
 
 export default function Title({ children }) {
   const joint = children ? ' - ' : '';
