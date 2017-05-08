@@ -73,17 +73,22 @@ export default function GlobalStyles() {
       }
       @media (min-width: 576px) {
         main {
-          margin: 3rem 1.5rem;
+          margin: 3rem 0rem;
         }
       }
       @media (min-width: 768px) {
         main {
-          margin: 4rem 2.5rem;
+          margin: 3rem 1rem;
         }
       }
       @media (min-width: 992px) {
         main {
-          margin: 4rem 3.5rem;
+          margin: 4rem 7.5rem;
+        }
+      }
+      @media (min-width: 1200px) {
+        main {
+          margin: 4rem 12.5rem;
         }
       }
 
