@@ -3,6 +3,8 @@ import Color from 'color';
 import { grey800, indigo300 } from 'constants/colors';
 
 
+const overlayColor = 'rgba(255, 255, 255, 0.8)';
+
 export default function GlobalStyles() {
   return (
     <style jsx global>{`
@@ -23,32 +25,32 @@ export default function GlobalStyles() {
 
       body {
         background-image:
-          url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><rect fill="rgba(255, 255, 255, 0.85)" x="0" y="0" width="1" height="1" /></svg>'),
+          linear-gradient(0deg, ${overlayColor}, ${overlayColor}),
           url(/static/background.svg);
         background-position: center top;
         background-repeat: repeat-y, repeat;
-        background-size: 100%, 400px;
+        background-size: 100% 1px, 400px;
         color: ${grey800};
         margin: 0;
       }
       @media (min-width: 576px) {
         body {
-          background-size: 540px, 400px;
+          background-size: 540px 1px, 400px;
         }
       }
       @media (min-width: 768px) {
         body {
-          background-size: 720px, 400px;
+          background-size: 720px 1px, 400px;
         }
       }
       @media (min-width: 992px) {
         body {
-          background-size: 960px, 400px;
+          background-size: 960px 1px, 400px;
         }
       }
       @media (min-width: 1200px) {
         body {
-          background-size: 1140px, 400px;
+          background-size: 1140px 1px, 400px;
         }
       }
 
