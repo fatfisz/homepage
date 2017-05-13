@@ -9,6 +9,7 @@ import { grey100, grey200, grey800 } from 'constants/colors';
 
 const links = [
   { href: '/', label: 'Home' },
+  { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
 ];
 
