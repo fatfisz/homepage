@@ -8,6 +8,7 @@ function About() {
   return (
     <div>
       <Title>About</Title>
+
       <h3>
         My name's Rafał Ruciński.
       </h3>

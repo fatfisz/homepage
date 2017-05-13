@@ -15,7 +15,6 @@ export default function GlobalStyles() {
       html {
         font-family: Lato, sans-serif;
         font-size: 18px;
-        line-height: 1.5;
       }
       @media (max-width: 575px) {
         html {
@@ -68,6 +67,14 @@ export default function GlobalStyles() {
         color: ${Color(indigo300).darken(0.2)};
       }
 
+      code {
+        background-color: #f7f7f9;
+        border-radius: 0.125rem;
+        color: #bd4147;
+        font-size: 0.875rem;
+        padding: 0.125rem 0.25rem;
+      }
+
       main {
         margin: 2rem 0;
       }
@@ -93,6 +100,7 @@ export default function GlobalStyles() {
       }
 
       p, ul {
+        line-height: 1.75;
         margin: 1rem 0;
       }
 
