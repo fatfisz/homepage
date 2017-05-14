@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { PropTypes } from 'react';
+import PropTypes from 'prop-types';
 
 import highlight from 'utils/highlight';
 

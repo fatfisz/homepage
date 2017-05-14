@@ -1,4 +1,4 @@
-import { PropTypes } from 'react';
+import PropTypes from 'prop-types';
 
 
 export default function Image({ svgName, svgContents, ...props }) {
