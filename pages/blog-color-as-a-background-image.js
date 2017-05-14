@@ -1,14 +1,14 @@
 import { stripIndent } from 'common-tags';
 import Link from 'next/link';
 
+import Body from 'components/body';
 import CodeExample from 'components/code-example';
 import Title from 'components/title';
-import wrapBody from 'components/wrap-body';
 
 
-function Post() {
+export default function Post() {
   return (
-    <div>
+    <Body>
       <Title>Color as a background image</Title>
 
       <h5>
@@ -141,8 +141,6 @@ function Post() {
         That's all for this post, I hope you find it useful.
         Thanks for reading!
       </p>
-    </div>
+    </Body>
   );
 }
-
-export default wrapBody(Post);

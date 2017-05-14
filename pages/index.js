@@ -1,42 +1,42 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
+import Body from 'components/body';
 import Image from 'components/image';
-import wrapBody from 'components/wrap-body';
 
 
-function Index() {
+export default function Index() {
   return (
-    <div className="index">
-      <h2>
-        Hi, I'm Rafał.
-      </h2>
+    <Body>
+      <div className="index">
+        <h2>
+          Hi, I'm Rafał.
+        </h2>
 
-      <h3>
-        Some people call me FatFisz.
-      </h3>
+        <h3>
+          Some people call me FatFisz.
+        </h3>
 
-      <Image svgName="chybaryba" style={{ width: '100%', height: '50vh' }} />
+        <Image svgName="chybaryba" style={{ width: '100%', height: '50vh' }} />
 
-      <h4>
-        (here's an image of a fat fish I made)
-      </h4>
+        <h4>
+          (here's an image of a fat fish I made)
+        </h4>
 
-      <br />
-      <p>
-        For now you can read a bit <Link href="/about" prefetch><a>about me</a></Link>.
-      </p>
-      <p>
-        More content coming soon, I promise.
-      </p>
+        <br />
+        <p>
+          For now you can read a bit <Link href="/about" prefetch><a>about me</a></Link>.
+        </p>
+        <p>
+          More content coming soon, I promise.
+        </p>
 
-      <style jsx>{`
-        .index {
-          text-align: center;
-        }
-      `}</style>
-    </div>
+        <style jsx>{`
+          .index {
+            text-align: center;
+          }
+        `}</style>
+      </div>
+    </Body>
   );
 }
-
-export default wrapBody(Index);

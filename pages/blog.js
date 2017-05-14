@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
+import Body from 'components/body';
 import Title from 'components/title';
-import wrapBody from 'components/wrap-body';
 
 
 const posts = [
@@ -20,9 +20,9 @@ const posts = [
   },
 ];
 
-function Blog() {
+export default function Blog() {
   return (
-    <div>
+    <Body>
       <Title>Blog</Title>
 
       {posts.map(({ date, href, title, excerpt }) =>
@@ -41,8 +41,6 @@ function Blog() {
           </h5>
         </div>
       )}
-    </div>
+    </Body>
   );
 }
-
-export default wrapBody(Blog);

@@ -1,12 +1,12 @@
 import Head from 'next/head';
 
+import Body from 'components/body';
 import Title from 'components/title';
-import wrapBody from 'components/wrap-body';
 
 
-function About() {
+export default function About() {
   return (
-    <div>
+    <Body>
       <Title>About</Title>
 
       <h3>
@@ -54,8 +54,6 @@ function About() {
           {' '}<a href="http://store.steampowered.com/app/275850/No_Mans_Sky/">No Man's Sky</a>.
         </li>
       </ul>
-    </div>
+    </Body>
   );
 }
-
-export default wrapBody(About);
