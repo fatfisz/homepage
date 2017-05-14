@@ -8,7 +8,7 @@ import wrapBody from 'components/wrap-body';
 const posts = [
   {
     date: '2017.05.13',
-    href: '/blog/color-as-a-background-image',
+    href: '/blog-color-as-a-background-image',
     title: 'Color as a background image',
     excerpt:
       <p>
