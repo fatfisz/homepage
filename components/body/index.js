@@ -1,9 +1,9 @@
 import Head from 'next/head';
 
+import GlobalStyles from 'components/body/global-styles';
+import Header from 'components/body/header';
 import Container from 'components/container';
 import Title from 'components/title';
-import GlobalStyles from './global-styles';
-import Header from './header';
 
 
 export default function Body({ children }) {

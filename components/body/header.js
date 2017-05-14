@@ -1,8 +1,8 @@
 import Color from 'color';
 
+import Menu from 'components/body/menu';
 import Container from 'components/container';
 import { grey100 } from 'constants/colors';
-import Menu from './menu';
 
 
 export default function Header() {
