@@ -72,7 +72,7 @@ export default function Post() {
       `}</CodeExample>
       <p>
         <em>
-          Take note of the order of the images: the top-most one should be first.
+          Take note of the order of the images: the top-most one on the page should be first in the declaration.
           This doesn't seem to be most intuitive, so I'm just leaving this here.
         </em>
       </p>
