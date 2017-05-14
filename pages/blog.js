@@ -26,7 +26,7 @@ function Blog() {
       <Title>Blog</Title>
 
       {posts.map(({ date, href, title, excerpt }) =>
-        <div>
+        <div key={href}>
           <h5>{date}</h5>
           <h4>
             <Link href={href} prefetch>
@@ -35,7 +35,7 @@ function Blog() {
           </h4>
           {excerpt}
           <h5>
-            <Link href="/blog/color-as-a-background-image" prefetch>
+            <Link href={href} prefetch>
               <a>Read more</a>
             </Link>
           </h5>
