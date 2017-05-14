@@ -1,15 +1,14 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
+import CodeExampleStyles from 'components/code-example/styles';
 import highlight from 'utils/highlight';
 
 
 export default function CodeExample({ children, type }) {
   return (
     <div>
-      <Head>
-        <link rel="stylesheet" href="/static/highlight.css" />
-      </Head>
+      <CodeExampleStyles />
 
       <pre
         className="hljs"
