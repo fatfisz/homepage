@@ -25,10 +25,7 @@ export default function Index() {
 
         <br />
         <p>
-          For now you can read a bit <Link href="/about" prefetch><a>about me</a></Link>.
-        </p>
-        <p>
-          More content coming soon, I promise.
+          You can read a bit <Link href="/about" prefetch><a>about me</a></Link> or some stuff I've written on <Link href="/blog" prefetch><a>my blog</a></Link>.
         </p>
 
         <style jsx>{`
