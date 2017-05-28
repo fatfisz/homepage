@@ -3,6 +3,8 @@ import Link from 'next/link';
 
 import Body from 'components/body';
 import CodeExample from 'components/code-example';
+import Disqus from 'components/disqus';
+import DisqusLink from 'components/disqus-link';
 import Title from 'components/title';
 
 
@@ -14,6 +16,7 @@ export default function Post() {
       <h5>
         2017.05.13
       </h5>
+      <DisqusLink href="blog-color-as-a-background-image" id="color-as-a-background-image" />
       <h2>
         Color as a background image
       </h2>
@@ -141,6 +144,8 @@ export default function Post() {
         That's all for this post, I hope you find it useful.
         Thanks for reading!
       </p>
+
+      <Disqus url="blog-color-as-a-background-image" id="color-as-a-background-image" />
     </Body>
   );
 }
