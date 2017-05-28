@@ -1,25 +1,17 @@
 import { stripIndent } from 'common-tags';
-import Link from 'next/link';
 
-import Body from 'components/body';
 import CodeExample from 'components/code-example';
-import Disqus from 'components/disqus';
-import DisqusLink from 'components/disqus-link';
-import Title from 'components/title';
+import PostWrapper from 'components/post-wrapper';
 
 
 export default function Post() {
   return (
-    <Body>
-      <Title>Color as a background image</Title>
-
-      <h5>
-        2017.05.13
-      </h5>
-      <DisqusLink href="blog-color-as-a-background-image" id="color-as-a-background-image" />
-      <h2>
-        Color as a background image
-      </h2>
+    <PostWrapper
+      title="Color as a background image"
+      date="2017.05.13"
+      href="blog-color-as-a-background-image"
+      disqusId="color-as-a-background-image"
+    >
       <h3>
         Introduction
       </h3>
@@ -144,8 +136,6 @@ export default function Post() {
         That's all for this post, I hope you find it useful.
         Thanks for reading!
       </p>
-
-      <Disqus url="blog-color-as-a-background-image" id="color-as-a-background-image" />
-    </Body>
+    </PostWrapper>
   );
 }
