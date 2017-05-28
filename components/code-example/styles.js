@@ -8,6 +8,7 @@ export default function CodeExampleStyles() {
       */
 
       .hljs {
+        font-size: 0.875rem;
         display: block;
         overflow-x: auto;
         padding: 0.5em;
