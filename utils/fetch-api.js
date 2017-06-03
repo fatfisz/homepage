@@ -1,9 +1,11 @@
 import fetch from 'isomorphic-fetch';
 
 
-const apiUrl = process.env.NODE_ENV === 'production' ? 'https://fatfisz.com/api' : 'http://localhost:4000';
+const clientApiUrl = process.env.NODE_ENV === 'production' ? 'https://fatfisz.com/api' : 'http://localhost:4000';
+const serverApiUrl = process.env.NODE_ENV === 'production' ? `https://localhost:${process.env.DATA_SERVER_PORT}` : 'http://localhost:4000';
 
-export default async function fetchApi(body) {
+export default async function fetchApi(body, isServer) {
+  const apiUrl = isServer ? serverApiUrl : clientApiUrl;
   const response = await fetch(apiUrl, {
     method: 'POST',
     body,

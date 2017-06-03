@@ -39,7 +39,8 @@ export default function Blog({ posts }) {
   );
 }
 
-Blog.getInitialProps = async () => {
-  const { posts } = await fetchApi('{ posts { id date title excerpt } }');
+Blog.getInitialProps = async ({ req }) => {
+  const isServer = Boolean(req);
+  const { posts } = await fetchApi('{ posts { id date title excerpt } }', isServer);
   return { posts };
 };
