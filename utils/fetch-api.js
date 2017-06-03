@@ -18,6 +18,9 @@ export default async function fetchApi(body, isServer) {
     const { data, errors } = await response.json();
 
     if (errors) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.log(errors);
+      }
       throw new Error('Unexpected error :(');
     }
     return data;
