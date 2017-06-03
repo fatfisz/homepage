@@ -5,18 +5,28 @@
     "classnames": "^2.2.5",
     "color": "^1.0.3",
     "common-tags": "^1.4.0",
+    "concurrently": "^3.4.0",
     "glob": "^7.1.1",
+    "graphql": "^0.10.1",
+    "graphql-tools": "^1.0.0",
     "highlight.js": "^9.10.0",
+    "isomorphic-fetch": "^2.2.1",
+    "koa": "^2.2.0",
     "next": "beta",
+    "nodemon": "^1.11.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "svgo": "^0.7.2"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "concurrently -k -p name -n SERVER,API -c blue,cyan \"yarn dev-server\" \"yarn dev-api-server\"",
+    "dev-server": "next",
+    "dev-api-server": "nodemon api-server --watch api-server",
     "build": "next build",
-    "start": "next start",
+    "start": "concurrently -k -p name -n SERVER,API -c blue,cyan \"yarn start-server\" \"yarn start-api-server\"",
+    "start-server": "next start",
+    "start-api-server": "node api-server",
     "build-images": "svgo -f images/raw -o images --config=.svgo && svgo -f images/raw-static -o static --config=.svgo"
   }
 }

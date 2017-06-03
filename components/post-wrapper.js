@@ -6,7 +6,9 @@ import DisqusLink from 'components/disqus-link';
 import Title from 'components/title';
 
 
-export default function PostWrapper({ children, date, disqusId, href, title }) {
+export default function PostWrapper({ children, date, id, title }) {
+  const href = `/blog/${id}`;
+
   return (
     <Body>
       <Title>{title}</Title>
@@ -15,14 +17,14 @@ export default function PostWrapper({ children, date, disqusId, href, title }) {
         <div className="date">
           {date}
         </div>
-        <DisqusLink href={href} id={disqusId} />
+        <DisqusLink href={href} id={id} />
       </h5>
 
       <h2>{title}</h2>
 
       {children}
 
-      <Disqus url={href} id={disqusId} />
+      <Disqus url={href} id={id} />
 
       <style jsx>{`
         .date-header {
@@ -40,7 +42,6 @@ export default function PostWrapper({ children, date, disqusId, href, title }) {
 PostWrapper.propTypes = {
   children: PropTypes.node,
   date: PropTypes.string.isRequired,
-  disqusId: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };

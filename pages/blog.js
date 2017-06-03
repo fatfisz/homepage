@@ -3,44 +3,43 @@ import Link from 'next/link';
 
 import Body from 'components/body';
 import Title from 'components/title';
+import fetchApi from 'utils/fetch-api';
 
 
-const posts = [
-  {
-    date: '2017.05.13',
-    href: '/blog-color-as-a-background-image',
-    title: 'Color as a background image',
-    excerpt:
-      <p>
-        Hi, welcome to my blog!
-        I will be writing mostly about the front-end stuff, JS in general, and also a bit about what I do outside of work.
-        I like to eat outside sometimes, so you can expect some posts with photos about places to eat in Warsaw.
-        In this post, however, I won't be writing about food.
-      </p>,
-  },
-];
+function BlogLink({ children, id }) {
+  return (
+    <Link href={`/blog/${id}`} prefetch>
+      {children}
+    </Link>
+  );
+}
 
-export default function Blog() {
+export default function Blog({ posts }) {
   return (
     <Body>
       <Title>Blog</Title>
 
-      {posts.map(({ date, href, title, excerpt }) =>
-        <div key={href}>
+      {posts.map(({ id, date, title, excerpt }) =>
+        <div key={id}>
           <h5>{date}</h5>
           <h4>
-            <Link href={href} prefetch>
+            <BlogLink id={id}>
               <a>{title}</a>
-            </Link>
+            </BlogLink>
           </h4>
           {excerpt}
           <h5>
-            <Link href={href} prefetch>
+            <BlogLink id={id}>
               <a>Read more</a>
-            </Link>
+            </BlogLink>
           </h5>
         </div>
       )}
     </Body>
   );
 }
+
+Blog.getInitialProps = async () => {
+  const { posts } = await fetchApi('{ posts { id date title excerpt } }');
+  return { posts };
+};

@@ -7,7 +7,7 @@ import disqusShortname from 'constants/disqus-shortname';
 
 function getDisqusConfigFunction({ id, url }) {
   return function () {
-    this.page.url = `https://fatfisz.com/${url}`;
+    this.page.url = `https://fatfisz.com${url}`;
     this.page.identifier = id;
     this.callbacks.onNewComment = [() => {
       if (window.DISQUSWIDGETS) {
