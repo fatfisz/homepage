@@ -7,10 +7,9 @@ import PostWrapper from 'components/post-wrapper';
 export default function Post() {
   return (
     <PostWrapper
+      id="color-as-a-background-image"
       title="Color as a background image"
       date="2017.05.13"
-      href="blog-color-as-a-background-image"
-      disqusId="color-as-a-background-image"
     >
       <h3>
         Introduction
