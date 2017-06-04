@@ -1,3 +1,5 @@
+import ErrorPage from 'next/error';
+
 import Post from 'components/post';
 import PostList from 'components/post-list';
 import fetchApi from 'utils/fetch-api';
@@ -6,12 +8,14 @@ import fetchApi from 'utils/fetch-api';
 export default function Blog({ post, posts }) {
   if (posts) {
     return <PostList posts={posts} />;
-  } else {
+  } else if (post) {
     return <Post {...post} />;
+  } else {
+    return <ErrorPage statusCode={404} />;
   }
 }
 
-Blog.getInitialProps = async ({ query, req }) => {
+Blog.getInitialProps = async ({ query, req, res }) => {
   const isServer = Boolean(req);
 
   if (query.id) {
