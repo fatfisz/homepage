@@ -3,7 +3,6 @@
 const { stripIndent } = require('common-tags');
 
 
-exports.id = 'color-as-a-background-image';
 exports.date = '2017.05.13';
 exports.title = 'Color as a background image';
 
