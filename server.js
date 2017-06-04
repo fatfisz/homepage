@@ -5,6 +5,7 @@ const Router = require('koa-router');
 const next = require('next');
 
 
+const port = process.env.SERVER_PORT || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -35,10 +36,10 @@ app.prepare().then(() => {
 
   server.use(router.routes());
 
-  server.listen(3000, (error) => {
+  server.listen(port, (error) => {
     if (error) {
       throw error;
     }
-    console.log('> Ready on http://localhost:3000');
+    console.log(`> Ready on http://localhost:${port}`);
   });
 });
