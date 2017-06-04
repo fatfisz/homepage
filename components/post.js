@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import Body from 'components/body';
 import Disqus from 'components/disqus';
 import DisqusLink from 'components/disqus-link';
+import Markdown from 'components/markdown';
 import Title from 'components/title';
 
 
-export default function PostWrapper({ children, date, id, title }) {
+export default function Post({ body, date, id, title }) {
   const href = `/blog/${id}`;
 
   return (
@@ -22,7 +23,7 @@ export default function PostWrapper({ children, date, id, title }) {
 
       <h2>{title}</h2>
 
-      {children}
+      <Markdown source={body} />
 
       <Disqus url={href} id={id} />
 
@@ -39,9 +40,20 @@ export default function PostWrapper({ children, date, id, title }) {
   );
 }
 
-PostWrapper.propTypes = {
-  children: PropTypes.node,
+Post.propTypes = {
+  body: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
+
+Post.getQuery = (id) => `
+  {
+    post(id: ${JSON.stringify(id)}) {
+      id
+      date
+      title
+      body
+    }
+  }
+`;
