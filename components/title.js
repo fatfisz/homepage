@@ -6,10 +6,12 @@ const baseTitle = 'FatFisz\'s homepage';
 
 export default function Title({ children }) {
   const joint = children ? ' - ' : '';
+  const title = `${children}${joint}${baseTitle}`;
 
   return (
     <Head>
-      <title>{children}{joint}{baseTitle}</title>
+      <title>{title}</title>
+      <meta property="og:title" content={title} />
     </Head>
   );
 }

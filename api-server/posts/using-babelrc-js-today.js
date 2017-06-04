@@ -1,12 +1,12 @@
 'use strict';
 
-const { stripIndent } = require('common-tags');
+const { oneLine, stripIndent } = require('common-tags');
 
 
 exports.date = '2017.06.04';
 exports.title = 'Using .babelrc.js today';
 
-exports.excerpt = stripIndent`
+exports.excerpt = oneLine`
   You don't have to wait for Babel 7 in order to use the full power of JS for configuration!
   In this post I suggest a way of configuring that will require a minimum amount of work when upgrading to Babel 7.
 `;

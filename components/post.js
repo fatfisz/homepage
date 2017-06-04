@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import PropTypes from 'prop-types';
 
 import Body from 'components/body';
@@ -7,12 +8,16 @@ import Markdown from 'components/markdown';
 import Title from 'components/title';
 
 
-export default function Post({ body, date, id, title }) {
+export default function Post({ body, date, excerpt, id, title }) {
   const href = `/blog/${id}`;
 
   return (
     <Body>
       <Title>{title}</Title>
+      <Head>
+        <meta property="og:url" content={`https://fatfisz.com${href}`} />
+        <meta property="og:description" content={excerpt} />
+      </Head>
 
       <h5 className="date-header">
         <div className="date">
@@ -43,6 +48,7 @@ export default function Post({ body, date, id, title }) {
 Post.propTypes = {
   body: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
+  excerpt: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
@@ -53,6 +59,7 @@ Post.getQuery = (id) => `
       id
       date
       title
+      excerpt
       body
     }
   }

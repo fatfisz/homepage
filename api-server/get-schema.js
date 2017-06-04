@@ -10,6 +10,7 @@ const typeDefs = `
     id: String!
     date: String!
     title: String!
+    excerpt: String!
   }
 
   type PostListItem implements PostMeta {
@@ -23,6 +24,7 @@ const typeDefs = `
     id: String!
     date: String!
     title: String!
+    excerpt: String!
     body: String!
   }
 
