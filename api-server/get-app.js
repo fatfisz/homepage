@@ -11,6 +11,10 @@ const maxQueryLength = 1000000;
 const schema = getSchema();
 
 function setCORS() {
+  if (process.env.NODE_ENV === 'production') {
+    return;
+  }
+
   this.set({
     'access-control-allow-headers': 'content-type',
     'access-control-allow-origin': 'http://localhost:3000',
