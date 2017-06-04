@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import PropTypes from 'prop-types';
 
 import CodeExampleStyles from 'components/code-example/styles';
