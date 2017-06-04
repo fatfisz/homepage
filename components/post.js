@@ -15,8 +15,8 @@ export default function Post({ body, date, excerpt, id, title }) {
     <Body>
       <Title>{title}</Title>
       <Head>
-        <meta property="og:url" content={`https://fatfisz.com${href}`} />
-        <meta property="og:description" content={excerpt} />
+        <meta name="og:url" content={`https://fatfisz.com${href}`} />
+        <meta name="og:description" content={excerpt} />
       </Head>
 
       <h5 className="date-header">
