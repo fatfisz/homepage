@@ -27,7 +27,7 @@
     "dev-api-server": "nodemon api-server --watch api-server",
     "build": "next build",
     "start": "concurrently -k -p name -n SERVER,API -c blue,cyan \"yarn start-server\" \"yarn start-api-server\"",
-    "start-server": "next start",
+    "start-server": "node server.js",
     "start-api-server": "node api-server",
     "build-images": "svgo -f images/raw -o images --config=.svgo && svgo -f images/raw-static -o static --config=.svgo"
   }
