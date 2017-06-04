@@ -75,6 +75,10 @@ export default function GlobalStyles() {
         padding: 0.125rem 0.25rem;
       }
 
+      h1, h2, h3, h4, h5, h6 {
+        margin: 1.25em 0;
+      }
+
       main {
         margin: 2rem 0;
       }

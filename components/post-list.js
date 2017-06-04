@@ -18,7 +18,7 @@ export default function PostList({ posts }) {
       <Title>Blog</Title>
 
       {posts.map(({ id, date, title, excerpt }) =>
-        <div key={id}>
+        <div key={id} className="post-list-item">
           <h5>{date}</h5>
           <h4>
             <BlogLink id={id}>
@@ -33,6 +33,12 @@ export default function PostList({ posts }) {
           </h5>
         </div>
       )}
+
+      <style jsx>{`
+        .post-list-item + .post-list-item {
+          margin-top: 4rem;
+        }
+      `}</style>
     </Body>
   );
 }
