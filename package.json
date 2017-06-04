@@ -25,7 +25,7 @@
   "scripts": {
     "dev": "concurrently -k -p name -n SERVER,API -c blue,cyan \"yarn dev-server\" \"yarn dev-api-server\"",
     "dev-server": "nodemon server.js --watch server.js",
-    "dev-api-server": "nodemon api-server --watch api-server",
+    "dev-api-server": "nodemon api-server --watch api-server --watch utils",
     "build": "next build",
     "start": "concurrently -k -p name -n SERVER,API -c blue,cyan \"yarn start-server\" \"yarn start-api-server\"",
     "start-server": "node server.js",

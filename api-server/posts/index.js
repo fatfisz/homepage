@@ -1,6 +1,6 @@
 'use strict';
 
-const slugify = require('slugify');
+const slugify = require('../../utils/slugify');
 
 
 const posts = [
@@ -8,7 +8,7 @@ const posts = [
 ];
 
 const postsWithId = posts.map((post) => Object.assign({}, post, {
-  id: slugify(post.title).toLowerCase(),
+  id: slugify(post.title),
 }));
 
 module.exports = postsWithId;
