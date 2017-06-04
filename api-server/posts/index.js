@@ -4,6 +4,7 @@ const slugify = require('../../utils/slugify');
 
 
 const posts = [
+  require('./using-babelrc-js-today'),
   require('./color-as-a-background-image'),
 ];
 

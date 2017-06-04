@@ -1,6 +1,6 @@
 import Color from 'color';
 
-import { grey800, indigo300 } from 'constants/colors';
+import { grey200, grey600, grey800, indigo300 } from 'constants/colors';
 
 
 const overlayColor = 'rgba(255, 255, 255, 0.8)';
@@ -65,6 +65,13 @@ export default function GlobalStyles() {
       }
       a:active {
         color: ${Color(indigo300).darken(0.2)};
+      }
+
+      blockquote {
+        border-left: 0.375rem solid ${grey200};
+        color: ${grey600};
+        margin: 0;
+        padding-left: 2rem;
       }
 
       code {
