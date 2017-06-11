@@ -6,7 +6,6 @@
     "color": "^1.0.3",
     "common-tags": "^1.4.0",
     "concurrently": "^3.4.0",
-    "glob": "^7.1.1",
     "graphql": "^0.10.1",
     "graphql-tools": "^1.0.0",
     "highlight.js": "^9.10.0",
