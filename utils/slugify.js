@@ -5,6 +5,7 @@ const slugify = require('slugify');
 
 slugify.extend({
   '.': ' ',
+  ':': ' ',
 });
 
 module.exports = function slugifyUtil(...args) {
