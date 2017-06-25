@@ -19,9 +19,11 @@
     "react-dom": "^15.5.4",
     "react-markdown": "^2.5.0",
     "slugify": "^1.1.0",
-    "svgo": "^0.7.2"
+    "svgo": "^0.7.2",
+    "webpack-bundle-analyzer": "^2.8.2"
   },
   "scripts": {
+    "analyze": "webpack-bundle-analyzer .next/stats.json",
     "dev": "concurrently -k -p name -n SERVER,API -c blue,cyan \"yarn dev-server\" \"yarn dev-api-server\"",
     "dev-server": "nodemon server.js --watch server.js",
     "dev-api-server": "nodemon api-server --watch api-server --watch utils",
