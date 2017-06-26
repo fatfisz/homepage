@@ -13,6 +13,7 @@ module.exports = {
       new BundleAnalyzerPlugin({
         analyzerMode: 'disabled',
         generateStatsFile: true,
+        logLevel: 'warn',
         statsFilename: 'stats.json',
       })
     );
