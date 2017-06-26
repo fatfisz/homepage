@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Body from 'components/body';
 import Disqus from 'components/disqus';
 import DisqusLink from 'components/disqus-link';
-import Markdown from 'components/markdown';
+import ReactObject from 'components/react-object';
 import Title from 'components/title';
 
 
@@ -28,7 +28,7 @@ export default function Post({ body, date, excerpt, id, title }) {
 
       <h2>{title}</h2>
 
-      <Markdown source={body} />
+      <ReactObject node={JSON.parse(body)} />
 
       <Disqus url={href} id={id} />
 

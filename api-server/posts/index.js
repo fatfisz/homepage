@@ -1,6 +1,7 @@
 'use strict';
 
 const slugify = require('../../utils/slugify');
+const markdownToReactObject = require('../markdown-to-react-object');
 
 
 const posts = [
@@ -11,6 +12,7 @@ const posts = [
 
 const postsWithId = posts.map((post) => Object.assign({}, post, {
   id: slugify(post.title),
+  body: JSON.stringify(markdownToReactObject(post.body)),
 }));
 
 module.exports = postsWithId;
