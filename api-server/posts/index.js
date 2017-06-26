@@ -1,7 +1,7 @@
 'use strict';
 
 const slugify = require('../../utils/slugify');
-const markdownToReactObject = require('../markdown-to-react-object');
+const renderMarkdown = require('../render-markdown');
 
 
 const posts = [
@@ -10,9 +10,7 @@ const posts = [
   require('./color-as-a-background-image'),
 ];
 
-const postsWithId = posts.map((post) => Object.assign({}, post, {
+module.exports = posts.map((post) => Object.assign({}, post, {
   id: slugify(post.title),
-  body: JSON.stringify(markdownToReactObject(post.body)),
+  body: JSON.stringify(renderMarkdown(post.body)),
 }));
-
-module.exports = postsWithId;
