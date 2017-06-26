@@ -51,11 +51,11 @@ exports.body = stripIndent`
   Then I tried inlining a one pixel svg:
 
   \`\`\`css
-    body {
-      background-image:
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><rect fill="rgba(255, 255, 255, 0.85)" x="0" y="0" width="1" height="1" /></svg>'),
-        url(/static/background.svg);
-    }
+  body {
+    background-image:
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><rect fill="rgba(255, 255, 255, 0.85)" x="0" y="0" width="1" height="1" /></svg>'),
+      url(/static/background.svg);
+  }
   \`\`\`
 
   _Take note of the order of the images: the top-most one on the page should be first in the declaration._
@@ -71,11 +71,11 @@ exports.body = stripIndent`
   Anyway, that's what I came up with:
 
   \`\`\`css
-    body {
-      background-image:
-        linear-gradient(0deg, $\{overlayColor}, $\{overlayColor}),
-        url(/static/background.svg);
-    }
+  body {
+    background-image:
+      linear-gradient(0deg, $\{overlayColor}, $\{overlayColor}),
+      url(/static/background.svg);
+  }
   \`\`\`
 
   The \`$\{overlayColor}\` bit is there because I have the styles declared inside a [styled-jsx](https://github.com/zeit/styled-jsx) block.
@@ -84,31 +84,31 @@ exports.body = stripIndent`
   Here's the code that takes care of that:
 
   \`\`\`css
+  body {
+    background-position: center top;
+    background-repeat: repeat-y, repeat;
+    background-size: 100% 1px, 400px;
+  }
+  @media (min-width: 576px) {
     body {
-      background-position: center top;
-      background-repeat: repeat-y, repeat;
-      background-size: 100% 1px, 400px;
+      background-size: 540px 1px, 400px;
     }
-    @media (min-width: 576px) {
-      body {
-        background-size: 540px 1px, 400px;
-      }
+  }
+  @media (min-width: 768px) {
+    body {
+      background-size: 720px 1px, 400px;
     }
-    @media (min-width: 768px) {
-      body {
-        background-size: 720px 1px, 400px;
-      }
+  }
+  @media (min-width: 992px) {
+    body {
+      background-size: 960px 1px, 400px;
     }
-    @media (min-width: 992px) {
-      body {
-        background-size: 960px 1px, 400px;
-      }
+  }
+  @media (min-width: 1200px) {
+    body {
+      background-size: 1140px 1px, 400px;
     }
-    @media (min-width: 1200px) {
-      body {
-        background-size: 1140px 1px, 400px;
-      }
-    }
+  }
   \`\`\`
 
   Setting \`repeat-y\` for the pixel is crucial, otherwise the whole viewport would be covered.
