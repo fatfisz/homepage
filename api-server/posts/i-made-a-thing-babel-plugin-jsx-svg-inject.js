@@ -30,7 +30,7 @@ exports.body = stripIndent`
   I was using the article about [introducing the SVG icons on GitHub](https://github.com/blog/2112-delivering-octicons-with-svg).
   One thing that inspired me there was the small example of code they provided:
 
-  \`\`\`ruby
+  \`\`\`erb
   <%= octicon(:symbol => "plus") %>
   \`\`\`
 
@@ -75,7 +75,7 @@ exports.body = stripIndent`
   I won't go through the details of [the implementation](https://github.com/fatfisz/babel-plugin-jsx-svg-inject),
   but I've created a [plugin](https://www.npmjs.com/package/babel-plugin-jsx-svg-inject) that allows me to do just what I wanted:
 
-  \`\`\`js
+  \`\`\`jsx
   import Icon from 'components/icon';
 
   function NiceIcons() {
@@ -92,7 +92,7 @@ exports.body = stripIndent`
   Starting with the version 5.0.0 the source of the image is transformed into JSX.
   There's also the "unwrapping" mode which more or less turns this:
 
-  \`\`\`js
+  \`\`\`xml
   <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
     <rect x="10" y="10" width="100" height="100" />
   </svg>
@@ -100,7 +100,7 @@ exports.body = stripIndent`
 
   into this:
 
-  \`\`\`js
+  \`\`\`jsx
   <Icon
     xmlns="http://www.w3.org/2000/svg"
     width="120"
