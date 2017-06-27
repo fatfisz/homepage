@@ -2,9 +2,7 @@ export default function CodeExampleStyles() {
   return (
     <style jsx global>{`
       .code-example {
-        background-color: #23241f;
         background-color: #263238;
-        color: #f8f8f2;
         color: #80cbc4;
         display: block;
         font-size: 0.875rem;
