@@ -13,7 +13,7 @@
     "isomorphic-fetch": "^2.2.1",
     "koa": "^2.2.0",
     "koa-router": "^7.2.0",
-    "next": "3.0.0-beta6",
+    "next": "beta",
     "nodemon": "^1.11.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
