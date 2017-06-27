@@ -18,8 +18,8 @@ export default function PostList({ posts }) {
     <Body>
       <Title>Blog</Title>
       <Head>
-        <meta name="og:url" content="https://fatfisz.com/blog" />
-        <meta name="og:description" content="Welcome to FatFisz's blog, where you can read about front-end adventures and stuff." />
+        <meta name="og:url" property="og:url" content="https://fatfisz.com/blog" />
+        <meta name="og:description" property="og:description" content="Welcome to FatFisz's blog, where you can read about front-end adventures and stuff." />
       </Head>
 
       {posts.map(({ id, date, title, excerpt }) =>
