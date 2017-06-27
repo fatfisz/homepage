@@ -30,7 +30,7 @@ exports.body = stripIndent`
   I was using the article about [introducing the SVG icons on GitHub](https://github.com/blog/2112-delivering-octicons-with-svg).
   One thing that inspired me there was the small example of code they provided:
 
-  \`\`\`erb
+  \`\`\`application/x-erb
   <%= octicon(:symbol => "plus") %>
   \`\`\`
 

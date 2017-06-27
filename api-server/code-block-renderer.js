@@ -3,12 +3,7 @@
 // This needs to be imported first to change node's require cache
 const CodeMirror = require('codemirror/addon/runmode/runmode.node');
 
-require('codemirror/mode/css/css');
-require('codemirror/mode/django/django');
-require('codemirror/mode/htmlembedded/htmlembedded');
-require('codemirror/mode/javascript/javascript');
-require('codemirror/mode/jsx/jsx');
-require('codemirror/mode/xml/xml');
+require('codemirror/mode/meta');
 
 
 const whitespaceRegExp = /\s+/g;
@@ -20,17 +15,17 @@ function styleToClassName(style) {
     .join(' ');
 }
 
-const typeToMIME = {
-  css: 'css',
-  django: 'django',
-  erb: 'application/x-erb',
-  js: 'javascript',
-  jsx: 'jsx',
-  json: 'application/json',
-  xml: 'xml',
-};
+function highlight(language, code) {
+  const mode = CodeMirror.findModeByMIME(language) || CodeMirror.findModeByName(language);
 
-function highlight(type, code) {
+  if (!mode) {
+    throw new Error(`Couldn't find a mode for "${language}"`);
+  }
+
+  if (!CodeMirror.modes[mode.mode]) {
+    require(`codemirror/mode/${mode.mode}/${mode.mode}.js`);
+  }
+
   const children = [];
   let style = null;
   let acc = '';
@@ -47,7 +42,7 @@ function highlight(type, code) {
     }
   }
 
-  CodeMirror.runMode(code, typeToMIME[type], (text, nextStyle) => {
+  CodeMirror.runMode(code, mode.mime, (text, nextStyle) => {
     if (nextStyle !== style) {
       flush();
       style = nextStyle;
