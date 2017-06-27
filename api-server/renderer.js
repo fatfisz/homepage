@@ -175,4 +175,4 @@ module.exports = class Renderer {
 
     return this.element.children[0];
   }
-}
+};
