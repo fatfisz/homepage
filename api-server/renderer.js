@@ -44,10 +44,6 @@ module.exports = class Renderer {
 
       case 'code_block':
         element.type = 'pre';
-        element['data-is-rendered'] = true;
-        if (node.info) {
-          element['data-info'] = node.info;
-        }
         break;
 
       case 'document':
