@@ -5,8 +5,8 @@ import Body from 'components/body';
 import Disqus from 'components/disqus';
 import CodeExampleStyles from 'components/code-example-styles';
 import DisqusLink from 'components/disqus-link';
-import ReactObject from 'components/react-object';
 import Title from 'components/title';
+import reactFromObject from 'utils/react-from-object';
 
 
 export default function Post({ body, date, excerpt, id, title }) {
@@ -30,7 +30,7 @@ export default function Post({ body, date, excerpt, id, title }) {
       <h2>{title}</h2>
 
       <CodeExampleStyles />
-      <ReactObject node={JSON.parse(body)} />
+      {reactFromObject(JSON.parse(body))}
 
       <Disqus url={href} id={id} />
 

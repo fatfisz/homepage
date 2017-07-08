@@ -60,9 +60,11 @@ module.exports = class Renderer {
 
       case 'image':
         element.type = 'img';
-        element.src = node.destination;
+        element.props = {
+          src: node.destination,
+        };
         if (node.title) {
-          element.title = node.title;
+          element.props.title = node.title;
         }
         break;
 
@@ -76,9 +78,11 @@ module.exports = class Renderer {
 
       case 'link':
         element.type = 'a';
-        element.href = node.destination;
+        element.props = {
+          href: node.destination,
+        };
         if (node.title) {
-          element.title = node.title;
+          element.props.title = node.title;
         }
         break;
 

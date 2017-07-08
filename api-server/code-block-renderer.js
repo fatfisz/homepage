@@ -34,7 +34,9 @@ function highlight(language, code) {
     if (style) {
       children.push({
         type: 'span',
-        className: styleToClassName(style),
+        props: {
+          className: styleToClassName(style),
+        },
         children: acc,
       });
     } else if (acc) {
@@ -59,7 +61,9 @@ function highlight(language, code) {
 module.exports = function codeBlockRenderer({ info, literal }) {
   return {
     type: 'pre',
-    className: 'code-example',
+    props: {
+      className: 'code-example',
+    },
     children: highlight(info, literal),
   };
 };
