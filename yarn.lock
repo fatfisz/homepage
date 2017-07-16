@@ -1183,6 +1183,10 @@ commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
 
+commonmark-react-object-renderer@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/commonmark-react-object-renderer/-/commonmark-react-object-renderer-1.0.0.tgz#287754d77b28bd89b85f6b88aaf3a6187d5fb2d2"
+
 commonmark@^0.27.0:
   version "0.27.0"
   resolved "https://registry.yarnpkg.com/commonmark/-/commonmark-0.27.0.tgz#d86c262b962821e9483c69c547bc58840c047b34"

@@ -1,9 +1,9 @@
 'use strict';
 
 const { Parser } = require('commonmark');
+const Renderer = require('commonmark-react-object-renderer');
 
 const codeBlockRenderer = require('./code-block-renderer');
-const Renderer = require('./renderer');
 
 
 const parser = new Parser();
