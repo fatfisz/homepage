@@ -20,7 +20,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-from-object": "^1.0.1",
+    "react-from-object": "^1.0.3",
     "slugify": "^1.1.0",
     "svgo": "^0.7.2",
     "webpack-bundle-analyzer": "^2.8.2"

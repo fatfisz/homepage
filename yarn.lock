@@ -3420,9 +3420,9 @@ react-dom@^15.5.4:
     object-assign "^4.1.0"
     prop-types "~15.5.7"
 
-react-from-object@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-from-object/-/react-from-object-1.0.1.tgz#df0690bea4b725d8022e70972415155d1bbfa517"
+react-from-object@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-from-object/-/react-from-object-1.0.3.tgz#d9cd8c299286912458f0e53005ac5f84a413a7db"
 
 react-hot-loader@3.0.0-beta.7:
   version "3.0.0-beta.7"
