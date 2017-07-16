@@ -10,7 +10,7 @@ import { grey100, grey200, grey800 } from 'constants/colors';
 const links = [
   { href: '/', label: 'Home' },
   { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'About' },
+  { href: '/about', label: 'About me' },
 ];
 
 const selectedItemBackgroundColor = Color(grey100).darken(0.05).fade(0.2);

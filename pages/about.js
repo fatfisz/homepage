@@ -5,7 +5,7 @@ import Title from 'components/title';
 export default function About() {
   return (
     <Body>
-      <Title>About</Title>
+      <Title>About me</Title>
 
       <h3>
         My name's Rafał Ruciński.
