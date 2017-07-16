@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import reactFromObject from 'react-from-object';
 
 import Body from 'components/body';
 import Disqus from 'components/disqus';
 import CodeExampleStyles from 'components/code-example-styles';
 import DisqusLink from 'components/disqus-link';
 import Title from 'components/title';
-import reactFromObject from 'utils/react-from-object';
 
 
 export default function Post({ body, date, excerpt, id, title }) {
