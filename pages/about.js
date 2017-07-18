@@ -45,11 +45,12 @@ export default function About() {
         </li>
         <li>
           I've been playing computer games since year 1.
-          Here are some of the games I currently like:
-          {' '}<a href="http://store.steampowered.com/app/105600/Terraria/">Terraria</a>,
+          Here are some of the games I currently play:
+          {' '}<a href="http://store.steampowered.com/app/588650/Dead_Cells/">Dead Cells</a>,
+          {' '}<a href="http://store.steampowered.com/app/275850/No_Mans_Sky/">No Man's Sky</a>,
           {' '}<a href="http://store.steampowered.com/app/311690/Enter_the_Gungeon/">Enter The Gungeon</a>,
-          {' '}<a href="http://store.steampowered.com/app/570/Dota_2/">Dota 2</a> (love-hate relationship),
-          {' '}<a href="http://store.steampowered.com/app/275850/No_Mans_Sky/">No Man's Sky</a>.
+          {' '}<a href="http://store.steampowered.com/app/105600/Terraria/">Terraria</a>,
+          and finally <a href="http://store.steampowered.com/app/570/Dota_2/">Dota 2</a> (love-hate relationship),
         </li>
       </ul>
     </Body>
