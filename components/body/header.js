@@ -1,5 +1,3 @@
-import Color from 'color';
-
 import Menu from 'components/body/menu';
 import Container from 'components/container';
 import { grey100 } from 'constants/colors';
@@ -23,7 +21,8 @@ export default function Header() {
 
       <style jsx>{`
         .navigation-background {
-          background-color: ${Color(grey100).fade(0.2)};
+          /* Color(grey100).fade(0.2) */
+          background-color: rgba(245, 245, 245, 0.8);
         }
 
         .navigation {

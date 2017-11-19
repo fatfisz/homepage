@@ -1,5 +1,3 @@
-import Color from 'color';
-
 import { grey200, grey600, grey800, indigo300 } from 'constants/colors';
 
 
@@ -61,10 +59,12 @@ export default function GlobalStyles() {
         text-decoration: underline;
       }
       a:focus, a:hover {
-        color: ${Color(indigo300).darken(0.1)};
+        /* Color(indigo300).darken(0.1) */
+        color: hsl(230.5, 44.1%, 57.2%);
       }
       a:active {
-        color: ${Color(indigo300).darken(0.2)};
+        /* Color(indigo300).darken(0.2) */
+        color: hsl(230.5, 44.1%, 50.8%);
       }
 
       blockquote {

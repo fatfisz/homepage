@@ -1,5 +1,4 @@
 import cx from 'classnames';
-import Color from 'color';
 import Link from 'next/link';
 import { Component } from 'react';
 
@@ -13,8 +12,10 @@ const links = [
   { href: '/about', label: 'About me' },
 ];
 
-const selectedItemBackgroundColor = Color(grey100).darken(0.05).fade(0.2);
-const selectedItemColor = Color(grey800).darken(0.1);
+// Color(grey100).darken(0.05).fade(0.2)
+const selectedItemBackgroundColor = 'hsla(0, 0%, 91.3%, 0.8)';
+// Color(grey800).darken(0.1)
+const selectedItemColor = 'hsl(0, 0%, 23.3%)';
 
 export default class Menu extends Component {
   state = {
@@ -159,7 +160,8 @@ export default class Menu extends Component {
             transition: background-color 0.1s ease;
           }
           .mobile-link:active {
-            background-color: ${Color(grey200).darken(0.05)};
+            /* Color(grey200).darken(0.05) */
+            background-color: hsl(0, 0%, 88.7%);
             color: ${selectedItemColor};
           }
         `}</style>
