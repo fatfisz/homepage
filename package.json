@@ -26,13 +26,13 @@
   },
   "scripts": {
     "analyze": "webpack-bundle-analyzer .next/stats.json",
-    "dev": "concurrently -k -p name -n SERVER,API -c blue,cyan \"yarn dev-server\" \"yarn dev-api-server\"",
-    "dev-server": "nodemon server.js --watch server.js",
-    "dev-api-server": "nodemon api-server --watch api-server --watch utils",
     "build": "next build",
+    "build-images": "svgo -f images/raw -o images --config=.svgo && svgo -f images/raw-static -o static --config=.svgo",
+    "dev": "concurrently -k -p name -n SERVER,API -c blue,cyan \"yarn dev-server\" \"yarn dev-api-server\"",
+    "dev-api-server": "nodemon api-server --watch api-server --watch utils",
+    "dev-server": "nodemon server.js --watch server.js",
     "start": "concurrently -k -p name -n SERVER,API -c blue,cyan \"yarn start-server\" \"yarn start-api-server\"",
-    "start-server": "node server.js",
     "start-api-server": "node api-server",
-    "build-images": "svgo -f images/raw -o images --config=.svgo && svgo -f images/raw-static -o static --config=.svgo"
+    "start-server": "node server.js"
   }
 }
