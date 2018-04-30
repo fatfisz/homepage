@@ -111,7 +111,7 @@ export default function GlobalStyles() {
       }
 
       p, ul {
-        line-height: 1.75;
+        line-height: 2;
         margin: 1rem 0;
       }
 

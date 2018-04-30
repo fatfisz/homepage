@@ -6,6 +6,7 @@ export default function CodeExampleStyles() {
         color: #80cbc4;
         display: block;
         font-size: 0.875rem;
+        line-height: 1.5;
         overflow-x: auto;
         padding: 0.5em;
       }
