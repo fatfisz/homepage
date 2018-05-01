@@ -136,7 +136,7 @@ exports.body = stripIndent`
   *Notice how in the meantime we increased the base value to 10000 from 1000, courtesy of some 3rd party component.*
 
   Now getting the right value works like so: \`getLevelIndex(1, zIndexMap.modal)\`, \`getLevelIndex(2, zIndexMap.tooltip)\`,
-  so even if tooltips are hidden behind modals when used on the same level, tooltips from inside will be displayed correctly.
+  so even if tooltips are hidden behind modals when used on the same level, tooltips from inside the modal will be displayed correctly.
 
   ... wait a minute, this seems overly complicated!
   Now the API is not that friendly, because we have to keep track of the level somehow.
