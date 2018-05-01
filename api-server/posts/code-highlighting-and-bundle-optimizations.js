@@ -73,7 +73,7 @@ exports.body = stripIndent`
   There are at least two wrappers that do just that: [codemirror-highlight](https://www.npmjs.com/package/codemirror-highlight) and [highlight-codemirror](https://www.npmjs.com/package/highlight-codemirror).
 
   \`\`\`js
-  import highlight from 'highlight-codemirror');
+  import highlight from 'highlight-codemirror';
 
   const html = highlight(code, 'javascript');
   \`\`\`

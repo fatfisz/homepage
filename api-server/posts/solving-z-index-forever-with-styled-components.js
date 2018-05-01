@@ -14,7 +14,7 @@ exports.body = stripIndent`
   ### CSS is ok-ish now
 
   CSS is known for some quirks that have been driving people mad since they started creating web "apps" (as opposed to just documents with hyperlinks).
-  For example there's \`z-index\`, which usually gets a random value that conflicts with another one in your app (you just didn't notice it yet 😉).
+  For example there's \`z-index\`, which usually gets a random value that conflicts with another one in your app (you just haven't noticed it yet 😉).
   There's \`vertical-align\` that rarely works as you'd want it to (fortunately we have Flexbox).
   There's also... wait, is that all?
 
@@ -23,9 +23,9 @@ exports.body = stripIndent`
   A lot of problems around scoping and modules can be solved by one of the many CSS-in-JS solutions.
   Speaking of which, as a React user, I had to give them a try.
 
-  The first one was [styled-jsx](https://github.com/zeit/styled-jsx), which is quite nice because it retains the CSS syntax while adding scoping and a few extra things on top.
+  The first one was [styled-jsx](https://github.com/zeit/styled-jsx), which is quite handy because it retains the CSS syntax while adding scoping and a few extra things on top.
   Then came [styled-components](https://github.com/styled-components/styled-components), which had a useful feature styled-jsx only gained in v2 - the ability to use props in styles.
-  I also like how it composes very nicely with every other component in the app - you only need to pass \`className\` prop and it just works!
+  I also like how it composes seamlessly with every other component in the app - you only need to pass \`className\` prop and it just works!
 
   Anyway, it seems to me that these days the only problems I encounter are the previously mentioned \`vertical-align\` and some [browser quirks](https://github.com/philipwalton/flexbugs) here and there.
   Even \`z-index\` is not scary anymore!
@@ -34,7 +34,7 @@ exports.body = stripIndent`
   ### Why z-index is far from perfect
 
   The first problem with \`z-index\` you'll encounter is that you don't have an idea what is the "right" value for this property.
-  In my experience coming up with a value that will work in all situations is never simple, because there are many things to consider:
+  In my experience, coming up with a value that will work in all situations is never simple, because there are many things to consider:
   * You're picking a number that [doesn't have a meaning on its own](https://en.wikipedia.org/wiki/Magic_number_(programming))
   * You need to know about other elements with \`z-index\` set
   * Sooner or later you need to learn what [a stacking context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context) is
@@ -50,7 +50,7 @@ exports.body = stripIndent`
   If you're using some form of CSS variables (native, LESS, SASS), then the first thing you can do is to set up some constants.
   By doing so you'll hide all the magic behind understandable labels.
   Of course using names like \`level1\`, \`level2\`, ... and so on is rather redundant,
-  so what you should do instead is to think of the types of components that you have in your website and how you want them to be displayed together.
+  so what you should do instead is think of the types of components that you have in your website and how you want them to be displayed together.
 
   As we started build a library of components at [Codility](https://codility.com/), I added a definition like this:
 
@@ -95,7 +95,7 @@ exports.body = stripIndent`
   * A tooltip inside a modal should have a higher \`z-index\` value, so the order should&nbsp;be: \`['modal', 'tooltip']\`.
   * Given a button with a tooltip on hover and a modal appearing on click, the order should be \`['tooltip', 'modal']\` so that the hiding tooltip does not appear on top of the appearing modal.
 
-  It was impossible to set this up using the approach we were using.
+  It was impossible to set this with the approach we were using.
   What it lacked was the notion of a context - every \`z-index\` value was defined in a 1-dimensional array, which doesn't work in scenarios such as the one above.
   It was time to go 2D.
 
@@ -146,10 +146,10 @@ exports.body = stripIndent`
 
   The styled-components library comes with a very powerful tool: [themes](https://www.styled-components.com/docs/advanced#theming).
   Inside every "styled" component you get an additional prop: \`theme\`, which carries the context provided by some component above.
-  Yes, this is made possible because of React context - a well-hidden gem of this library which recently got [an API upgrade](https://reactjs.org/docs/context.html).
+  This is made possible because of React context - a well-hidden gem of this library which recently received [an API upgrade](https://reactjs.org/docs/context.html).
 
-  You can "provide" two types of things in themes: an plain object with some values, or a function that returns such an object.
-  As a bonus, the function is called with the previous theme (set by the providers higher in the component tree).
+  You can "provide" two types of things in themes: a plain object with some values, or a function that returns such an object.
+  As a bonus, the function is called with the previous theme (set by providers that are higher in the component tree).
 
   Now that we know this, we can add some wrappers for our code:
 
