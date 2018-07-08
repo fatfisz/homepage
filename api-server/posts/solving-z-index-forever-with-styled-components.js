@@ -20,7 +20,7 @@ exports.body = stripIndent`
 
   Lately it seems I don't have too much beef with CSS.
   Most of the basic layouting problems can be solved with Flexbox.
-  A lot of problems around scoping and modules can be solved by one of the many CSS-in-JS solutions.
+  A lot of problems around scoping and modules can be solved with one of the many CSS-in-JS tools.
   Speaking of which, as a React user, I had to give them a try.
 
   The first one was [styled-jsx](https://github.com/zeit/styled-jsx), which is quite handy because it retains the CSS syntax while adding scoping and a few extra things on top.
@@ -89,7 +89,7 @@ exports.body = stripIndent`
 
   This approach proved to be plenty useful for a long time, until we needed to add a tooltip component to our component library.
   Because having tooltips next to a target element in the actual DOM can be problematic, all of them are instead appended to the document body and are positioned absolutely (thanks to [Popper.js](https://popper.js.org/) for computing the right position).
-  And so a decion had to be made: do tooltips go before the modal, or after?
+  And so a decision had to be made: do tooltips go before the modal, or after?
 
   Consider those situations:
   * A tooltip inside a modal should have a higher \`z-index\` value, so the order should&nbsp;be: \`['modal', 'tooltip']\`.
@@ -107,7 +107,7 @@ exports.body = stripIndent`
 
   The idea is this: we start with a base level on which the order of components is determined - this is the same as the previous approach.
   But once we are inside a z-indexed component (a modal, a pop-up, etc.), we go one "level" up.
-  On that level the components have the same order, but all of them appear on top of components on the level below.
+  On that level the components have the same order, but all of them appear on top of components from the level below.
 
   That's how we arrived at this piece of code:
 
@@ -133,7 +133,7 @@ exports.body = stripIndent`
   }
   \`\`\`
 
-  *Notice how in the meantime we increased the base value to 10000 from 1000, courtesy of some 3rd party component.*
+  *Notice how in the meantime we increased the "base value" from 1000 to 10000, courtesy of some 3rd party component.*
 
   Now getting the right value works like so: \`getLevelIndex(1, zIndexMap.modal)\`, \`getLevelIndex(2, zIndexMap.tooltip)\`,
   so even if tooltips are hidden behind modals when used on the same level, tooltips from inside the modal will be displayed correctly.
@@ -251,7 +251,7 @@ exports.body = stripIndent`
   But for a few months now this system has worked without problems and it seems pretty solid.
 
   Even if you're not using React or styled-components I hope you'll find something useful here;
-  the pattern shouldn't be hard to adopt in some other tool.
+  the pattern shouldn't be hard to adopt in another tool.
   In any case, what are your experiences with \`z-index\`?
   How did you handle the problems encountered when using this property?
   Share your solution in a comment!
