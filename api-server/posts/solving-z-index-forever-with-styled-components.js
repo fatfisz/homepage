@@ -171,10 +171,13 @@ exports.body = stripIndent`
   }
 
   export function getTheme(type) {
-    return prevTheme => getNextLevel(
-      get(prevTheme, 'levelUp.level', 0) + 1,
-      type,
-    );
+    return prevTheme => ({
+      ...prevTheme,
+      ...getNextLevel(
+        get(prevTheme, 'levelUp.level', 0) + 1,
+        type,
+      ),
+    });
   }
   \`\`\`
 
