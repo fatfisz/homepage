@@ -5,6 +5,7 @@ const renderMarkdown = require('../render-markdown');
 
 
 const posts = [
+  require('./dual-mode-react-components-with-getderivedstatefromprops'),
   require('./solving-z-index-forever-with-styled-components'),
   require('./code-highlighting-and-bundle-optimizations'),
   require('./i-made-a-thing-babel-plugin-jsx-svg-inject'),
