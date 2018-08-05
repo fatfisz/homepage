@@ -39,7 +39,7 @@ exports.body = stripIndent`
   One day I needed to build a component with the same capability;
   in the basic version it would take care of itself by using state, and optionally there would be a way to control it through props.
   To simplify things, the component would always use state and props would only update state when they are updated.
-  It ssounds nice, but how can we do that with React?
+  It sounds nice, but how can we do that with React?
 
   Before \`getDerivedStateFromProps\` the only sensible method was \`componentWillReceiveProps\`, for two reasons.
   First, it was **the** method of setting the state in reaction to prop changes.
