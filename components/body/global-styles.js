@@ -1,4 +1,4 @@
-import { grey200, grey600, grey800, indigo300 } from 'constants/colors';
+import { grey200, grey600, grey800, grey900, indigo300 } from 'constants/colors';
 
 
 const overlayColor = 'rgba(255, 255, 255, 0.8)';
@@ -12,11 +12,11 @@ export default function GlobalStyles() {
 
       html {
         font-family: Lato, sans-serif;
-        font-size: 18px;
+        font-size: 20px;
       }
       @media (max-width: 575px) {
         html {
-          font-size: 16px;
+          font-size: 18px;
         }
       }
 
@@ -75,9 +75,9 @@ export default function GlobalStyles() {
       }
 
       code {
-        background-color: #f7f7f9;
+        background-color: ${grey200};
         border-radius: 0.125rem;
-        color: #bd4147;
+        color: ${grey900};
         font-size: 0.875rem;
         padding: 0.125rem 0.25rem;
       }
@@ -101,36 +101,37 @@ export default function GlobalStyles() {
       }
       @media (min-width: 992px) {
         main {
-          margin: 4rem 7.5rem;
+          margin: 4rem 6.5rem;
         }
       }
       @media (min-width: 1200px) {
         main {
-          margin: 4rem 12.5rem;
+          margin: 4rem 11rem;
         }
       }
 
-      p, ul {
-        line-height: 2;
+      p, ol, ul {
+        line-height: 1.8;
         margin: 1rem 0;
       }
 
-      ul {
+      ol, ul {
         padding-left: 40px;
       }
 
       @media (max-width: 575px) {
-        p, ul {
+        p, ol, ul {
           margin: 0.75rem 0;
         }
 
-        ul {
+        ol, ul {
           padding-left: 30px;
         }
       }
 
       li {
         margin: 0.5rem 0;
+        padding: 0 0 0 0.5rem;
       }
     `}</style>
   );
