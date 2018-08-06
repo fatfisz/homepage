@@ -36,15 +36,15 @@ exports.body = stripIndent`
   After that you learn about \`<input>\` and then things become interesting:
   it turns out that \`<input>\` can work both with props (in the controlled mode) or without them, only by keeping a state (uncontrolled mode).
 
-  One day I needed to build a component with the same capability;
-  in the basic version it would take care of itself by using state, and optionally there would be a way to control it through props.
-  To simplify things, the component would always use state and props would only update state when they are updated.
+  One day I needed to build a component with the same capability.
+  In the basic version it had to take care of itself by using state, and optionally it could be controlled through props.
+  To simplify things, the component would always use state, and any changes in props would be reflected in the state.
   It sounds nice, but how can we do that with React?
 
   Before \`getDerivedStateFromProps\` the only sensible method was \`componentWillReceiveProps\`, for two reasons.
   First, it was **the** method of setting the state in reaction to prop changes.
   Second, the other method called on updates before render, \`componentWillUpdate\`, couldn't contain calls to \`setState\`.
-  This was all described in the React docs.
+  At the time when this was written, those things were still [described in the React docs](https://reactjs.org/docs/react-component.html#updating).
 
   Taking it all into consideration, I wrote something like this:
 
@@ -80,15 +80,15 @@ exports.body = stripIndent`
 
   In the **uncontrolled mode** the value in props is always \`undefined\`, so \`componentWillReceiveProps\` will do nothing.
   When \`handleChange\` is called, \`setState\` schedules a state update - and that's it.
-  \`onChange\` may or may not be called, but we don't care since value won't be passed through props anyway.
+  \`onChange\` may or may not be called, but we don't care, since value won't be passed through props anyway.
 
-  In the **controlled mode**, first \`value\` is taken from the props - \`componentWillReceiveProps\` is not called at mount time, so \`value\` needs to be set manually.
+  In the **controlled mode**, first \`value\` is taken from props - \`componentWillReceiveProps\` is not called at mount time, so \`value\` needs to be set manually.
   Then, when props change, the value in the state is updated.
   When \`handleChange\` is called, state is not changed; \`onChange\` should be used to pass the new value through props.
 
   This code works, but there are some obvious drawbacks:
 
-  * There are two pipelines for props feeding into state: on construction and when the props change (because \`componentWillReceiveProps\` is only called on updates)
+  * There are two pipelines for props feeding into state: on construction, and also when the props change (because \`componentWillReceiveProps\` is only called on updates)
   * There are two conditions which make the code more complicated (checking if the value in props is nullish)
   * The conditions are similar, but have reversed signs (\`==\` and \`!=\`), making it easier to make a mistake
 
@@ -123,7 +123,7 @@ exports.body = stripIndent`
   }
   \`\`\`
 
-  This code behaves the same as the \`componentWillReceiveProps\` version, but it looks so muich cleaner!
+  This code behaves the same as the \`componentWillReceiveProps\` version, but it looks so much cleaner!
 
   The best change in my opinion is that now the state gets value from only one place.
 
@@ -133,12 +133,12 @@ exports.body = stripIndent`
   Because \`getDerivedStateFromProps\` is the only source of truth for \`state.value\`, it's also easier to extend it - which we'll do in a minute.
 
   The second change is that now the annoying conditions are gone; there's only one straightforward condition in the expression \`props.value ?? state.value\`,
-  but there's no need to have it in \`handleChange\` anymore.
+  but \`handleChange\` doesn't have it anymore.
   Why? Because if the state is changed unnecessarily, \`getDerivedStateFromProps\` will always correct it.
 
   So that's how we get to the order of the first two elements on my list.
   The value in props is always the most important one because we wouldn't want props to be ignored.
-  The value in state is used as a fallback mechanism - when the component is not controlled \`state.value\` is just set to itself and reacts to \`setState\` properly.
+  The value in state is used as a fallback mechanism - when the component is not controlled, \`state.value\` is just set to itself and reacts to \`setState\` properly.
 
   ### Extending the list
 
@@ -167,13 +167,13 @@ exports.body = stripIndent`
 
   Let's take a look at \`props.defaultValue\`.
   During the mounting phase, when no value is passed through the props, \`state.value\` is still \`undefined\`.
-  That's why just before the first render \`state.value\` will be equal to \`props.defaultValue\`.
+  That's why just before the first render \`state.value\` will be assigned the value of \`props.defaultValue\`.
   On subsequent renders \`state.value\` will be used, and \`props.defaultValue\` will become dormant.
 
-  In situation when neither \`value\` nor \`defaultValue\` are in the props, I tend to provide an appropriate value, like an empty string or a zero, as a fallback.
+  In a situation when neither \`value\` nor \`defaultValue\` are in the props, I tend to provide an appropriate value, like an empty string or a zero, as a fallback.
   This has two benefits:
 
-  1. It silences warnings when using \`<input>\` and switching between the controlled/uncontrolled mode.
+  1. It silences warnings when using \`<input>\`, because now it is always controlled.
   1. It ensures that the value in state will always be defined and non-null, which may simplify the logic of component's methods.
 
   That's it!
@@ -181,7 +181,7 @@ exports.body = stripIndent`
   ### Final thoughts
 
   Don't use \`getDerivedStateFromProps\` unless you really need to.
-  Even though with this method you can make a dual-mode component easily, in most cases there's just no need.
+  Even though with this method you can make a dual-mode component easily, in most cases there's just no need to do so.
   I only do that for some reusable components, and not before I **need** them to handle both modes.
 
   While the order of values in \`getDerivedStateFromProps\` has significance, I don't always use all of them.
