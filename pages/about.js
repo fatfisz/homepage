@@ -11,21 +11,21 @@ export default function About() {
         My name's Rafał Ruciński.
       </h3>
       <p>
-        I have a wife. <a href="https://www.instagram.com/fixtheworldup/">She can write quite well</a>.
-      </p>
-      <p>
         I'm mostly occupied with creating websites, preferably the front-end side of them.
-        I'm currently trying to make <a href="https://codility.com/">Codility</a> more awesome.
+        Currently I'm trying to make <a href="https://codility.com/">Codility</a> more awesome.
       </p>
       <p>
         I have some projects on GitHub: <a href="https://github.com/fatfisz">@fatfisz</a>.
       </p>
       <p>
-        I created two games:
+        So far I created three games:
       </p>
       <ul>
         <li>
-          <a href="http://js13kgames.com/entries/sobanko">Sobanko</a>, a reverse Sokoban. The levels come from the original one.
+          <a href="http://js13kgames.com/entries/space-wizard-toast-spinning">Space Wizard Toast Spinning</a>, a game about a spinning slice of toast.
+        </li>
+        <li>
+          <a href="http://js13kgames.com/entries/sobanko">Sobanko</a>, a reverse Sokoban. The levels are copied from the original one.
         </li>
         <li>
           <a href="http://js13kgames.com/entries/anti-paradox-run">Anti-Paradox Run</a>, an infinite runner.
@@ -37,7 +37,7 @@ export default function About() {
       </p>
       <ul>
         <li>
-          My name has some funny characters because I was born and live in Poland.
+          My name has some funny characters because I was born in Poland.
         </li>
         <li>
           Both people in Poland and outside of it usually write "fatfi<strong>sh</strong>" instead of "fatfi<strong>sz</strong>" the first time.
@@ -46,11 +46,10 @@ export default function About() {
         <li>
           I've been playing computer games since year 1.
           Here are some of the games I currently play:
-          {' '}<a href="http://store.steampowered.com/app/588650/Dead_Cells/">Dead Cells</a>,
-          {' '}<a href="http://store.steampowered.com/app/275850/No_Mans_Sky/">No Man's Sky</a>,
-          {' '}<a href="http://store.steampowered.com/app/311690/Enter_the_Gungeon/">Enter The Gungeon</a>,
+          {' '}<a href="https://store.steampowered.com/app/427520/Factorio/">Factorio</a>,
+          {' '}<a href="https://store.steampowered.com/app/457140/Oxygen_Not_Included/">Oxygen Not Included</a>,
           {' '}<a href="http://store.steampowered.com/app/105600/Terraria/">Terraria</a>,
-          and finally <a href="http://store.steampowered.com/app/570/Dota_2/">Dota 2</a> (love-hate relationship),
+          and finally <a href="http://store.steampowered.com/app/570/Dota_2/">Dota 2</a> (a love-hate relationship),
         </li>
       </ul>
     </Body>

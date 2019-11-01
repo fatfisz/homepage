@@ -7,7 +7,7 @@ import Title from 'components/title';
 
 function BlogLink({ children, id }) {
   return (
-    <Link href={{ url: 'blog', query: { id } }} as={`/blog/${id}`} prefetch>
+    <Link href={{ url: 'blog', query: { id } }} as={`/blog/${id}`}>
       {children}
     </Link>
   );

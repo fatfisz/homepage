@@ -44,6 +44,12 @@ const resolvers = {
       return posts.find((post) => post.id === id);
     },
   },
+
+  PostMeta: {
+    __resolveType() {
+      return null;
+    },
+  },
 };
 
 module.exports = function getSchema() {

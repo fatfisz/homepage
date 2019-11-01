@@ -19,8 +19,8 @@ export default function Index() {
         <Image svgName="chybaryba" style={{ width: '100%', height: '50vh' }} />
 
         <p>
-          You can learn a bit <Link href="/about" prefetch><a>about me</a></Link>,<br />
-          or you can read some stuff I've written on <Link href="/blog" prefetch><a>my blog</a></Link>.
+          You can learn a bit <Link href="/about"><a>about me</a></Link>,<br />
+          or you can read some stuff I've written on <Link href="/blog"><a>my blog</a></Link>.
         </p>
 
         <style jsx>{`
