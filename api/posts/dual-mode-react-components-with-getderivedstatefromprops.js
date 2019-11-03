@@ -25,7 +25,7 @@ export const body = stripIndent`
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
   How did I get there?
-  Let me go back a few months...
+  Let me go a few months back...
 
   ### Dual mode components with componentWillReceiveProps
 
