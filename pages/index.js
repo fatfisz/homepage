@@ -14,7 +14,7 @@ export default function IndexPage() {
       </h3>
 
       <p>
-        I do computer stuff - check out my latest game, <Link href="http://js13kgames.com/entries/space-wizard-toast-spinning"><a>Space Wizard Toast Spinning</a></Link>!
+        I do computer stuff - check out my latest game, <a href="http://js13kgames.com/entries/space-wizard-toast-spinning">Space Wizard Toast Spinning</a>!
       </p>
 
       <p>
