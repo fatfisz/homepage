@@ -3,7 +3,7 @@ import Error from 'next/error';
 import Post from 'components/post';
 import fetchApi from 'utils/fetch-api';
 
-export default function Blog({ post }) {
+export default function PostPage({ post }) {
   if (post) {
     return <Post {...post} />;
   } else {
@@ -11,7 +11,7 @@ export default function Blog({ post }) {
   }
 }
 
-Blog.getInitialProps = async ({ query: { id }, req, }) => {
+PostPage.getInitialProps = async ({ query: { id }, req, }) => {
   const isServer = Boolean(req);
   const { post } = await fetchApi(Post.getQuery(id), isServer);
   return { post };
