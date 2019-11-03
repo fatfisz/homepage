@@ -17,7 +17,7 @@ export default function About() {
         I have some projects on GitHub: <a href="https://github.com/fatfisz">@fatfisz</a>.
       </p>
       <p>
-        So far I created three games:
+        So far I have created three games:
       </p>
       <ul>
         <li>
