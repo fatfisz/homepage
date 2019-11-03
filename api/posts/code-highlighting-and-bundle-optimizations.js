@@ -1,17 +1,14 @@
-'use strict';
+import { oneLine, stripIndent } from 'common-tags';
 
-const { oneLine, stripIndent } = require('common-tags');
+export const date = '2017.07.18';
+export const title = 'Code highlighting and bundle optimizations';
 
-
-exports.date = '2017.07.18';
-exports.title = 'Code highlighting and bundle optimizations';
-
-exports.excerpt = oneLine`
+export const excerpt = oneLine`
   In this post I'll describe my experience with some of the existing code highlighting tools.
   I'll also add something extra about removing libraries from the script bundle while retaining their functionality.
 `;
 
-exports.body = stripIndent`
+export const body = stripIndent`
   ### TL;DR
 
   In this post I'll describe my experience with some of the existing code highlighting tools.

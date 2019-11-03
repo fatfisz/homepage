@@ -1,10 +1,9 @@
-import cx from 'classnames';
+import cc from 'classcat';
 import Link from 'next/link';
 import { useState } from 'react';
 
 import Image from 'components/image';
 import { grey100, grey200, grey800 } from 'constants/colors';
-
 
 const links = [
   { href: '/', label: 'Home' },
@@ -31,20 +30,20 @@ export default function Menu() {
       </div>
 
       <div
-        className={cx('overlay showable', { 'mod-visible': mobileMenuVisible })}
+        className={cc('overlay showable', { 'mod-visible': mobileMenuVisible })}
         onClick={() => setMobileMenuVisible(false)}
       />
 
       <div className="menu-mobile">
         <div
-          className={cx('mobile-button', { 'mod-active': mobileMenuVisible })}
+          className={cc('mobile-button', { 'mod-active': mobileMenuVisible })}
           onClick={() => setMobileMenuVisible(true)}
         >
           <Image svgName="hamburger" fill="currentColor" />
         </div>
 
         <div
-          className={cx('mobile-links showable', { 'mod-visible': mobileMenuVisible })}
+          className={cc('mobile-links showable', { 'mod-visible': mobileMenuVisible })}
           onClick={() => setMobileMenuVisible(false)}
         >
           {links.map(({ href, label }) =>

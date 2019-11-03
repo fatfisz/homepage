@@ -1,23 +1,17 @@
 'use strict';
 
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: Boolean(process.env.ANALYZE),
+});
 
-
-module.exports = {
-  onDemandEntries: {
-    maxInactiveAge: Infinity,
-  },
-
-  webpack(config) {
-    config.plugins.push(
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'disabled',
-        generateStatsFile: true,
-        logLevel: 'warn',
-        statsFilename: 'stats.json',
-      })
-    );
+module.exports = withBundleAnalyzer({
+  webpack(config, { isServer }) {
+    if (isServer) {
+      const runmodeNodePath = require.resolve('codemirror/addon/runmode/runmode.node');
+      config.resolve.alias[require.resolve('codemirror/lib/codemirror')] = runmodeNodePath;
+      config.resolve.alias[require.resolve('codemirror/addon/runmode/runmode')] = runmodeNodePath;
+    }
 
     return config;
   },
-};
+});

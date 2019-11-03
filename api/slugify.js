@@ -1,7 +1,4 @@
-'use strict';
-
-const slugify = require('slugify');
-
+import slugify from 'slugify';
 
 slugify.extend({
   '.': ' ',

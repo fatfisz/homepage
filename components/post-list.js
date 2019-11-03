@@ -4,10 +4,9 @@ import Link from 'next/link';
 import Body from 'components/body';
 import Title from 'components/title';
 
-
 function BlogLink({ children, id }) {
   return (
-    <Link href={{ url: 'blog', query: { id } }} as={`/blog/${id}`}>
+    <Link href="/blog/[id]" as={`/blog/${id}`}>
       {children}
     </Link>
   );

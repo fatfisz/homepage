@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Body from 'components/body';
 import Image from 'components/image';
 
-
 export default function Index() {
   return (
     <Body>

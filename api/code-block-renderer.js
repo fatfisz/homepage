@@ -1,10 +1,10 @@
-'use strict';
-
 // This needs to be imported first to change node's require cache
-const CodeMirror = require('codemirror/addon/runmode/runmode.node');
+import CodeMirror from 'codemirror/addon/runmode/runmode.node';
 
-require('codemirror/mode/meta');
-
+import 'codemirror/mode/meta';
+import 'codemirror/mode/django/django';
+import 'codemirror/mode/htmlembedded/htmlembedded';
+import 'codemirror/mode/jsx/jsx';
 
 const whitespaceRegExp = /\s+/g;
 
@@ -23,7 +23,7 @@ function highlight(language, code) {
   }
 
   if (!CodeMirror.modes[mode.mode]) {
-    require(`codemirror/mode/${mode.mode}/${mode.mode}.js`);
+    throw new Error(`Mode ${mode.mode} is not supported, did you forget to pre-require it?`)
   }
 
   const children = [];

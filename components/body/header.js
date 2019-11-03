@@ -2,7 +2,6 @@ import Menu from 'components/body/menu';
 import Container from 'components/container';
 import { grey100 } from 'constants/colors';
 
-
 export default function Header() {
   return (
     <div className="navigation-background">

@@ -3,7 +3,6 @@ import { Component } from 'react';
 
 import disqusShortname from 'constants/disqus-shortname';
 
-
 const listeners = new Set();
 
 function installDisqusCount() {

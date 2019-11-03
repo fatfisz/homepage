@@ -5,7 +5,6 @@ import Header from 'components/body/header';
 import Container from 'components/container';
 import Title from 'components/title';
 
-
 export default function Body({ children }) {
   return (
     <div>

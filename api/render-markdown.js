@@ -1,11 +1,8 @@
-'use strict';
+import { Parser } from 'commonmark';
+import Renderer from 'commonmark-react-object-renderer';
 
-const { Parser } = require('commonmark');
-const Renderer = require('commonmark-react-object-renderer');
-
-const codeBlockRenderer = require('./code-block-renderer');
-const htmlBlockRenderer = require('./html-block-renderer');
-
+import codeBlockRenderer from './code-block-renderer';
+import htmlBlockRenderer from './html-block-renderer';
 
 const parser = new Parser();
 const renderer = new Renderer({

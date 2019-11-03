@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
-
 const baseTitle = 'FatFisz\'s homepage';
 
 export default function Title({ children }) {

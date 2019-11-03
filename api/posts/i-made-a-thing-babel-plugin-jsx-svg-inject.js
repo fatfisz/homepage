@@ -1,17 +1,14 @@
-'use strict';
+import { oneLine, stripIndent } from 'common-tags';
 
-const { oneLine, stripIndent } = require('common-tags');
+export const date = '2017.06.25';
+export const title = 'I made a thing: babel-plugin-jsx-svg-inject';
 
-
-exports.date = '2017.06.25';
-exports.title = 'I made a thing: babel-plugin-jsx-svg-inject';
-
-exports.excerpt = oneLine`
+export const excerpt = oneLine`
   Today I released version 5.0.0 of the babel-plugin-jsx-svg-inject plugin.
   Here's how it came to be.
 `;
 
-exports.body = stripIndent`
+export const body = stripIndent`
   ### TL;DR
   Today I released version 5.0.0 of the [babel-plugin-jsx-svg-inject](https://www.npmjs.com/package/babel-plugin-jsx-svg-inject) plugin.
   Here's how it came to be.

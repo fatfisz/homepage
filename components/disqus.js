@@ -3,7 +3,6 @@ import { Component } from 'react';
 
 import disqusShortname from 'constants/disqus-shortname';
 
-
 function getDisqusConfigFunction({ id, url }) {
   return function () {
     this.page.url = `https://fatfisz.com${url}`;

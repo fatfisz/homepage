@@ -1,16 +1,13 @@
-'use strict';
+import { oneLine, stripIndent } from 'common-tags';
 
-const { oneLine, stripIndent } = require('common-tags');
+export const date = '2018.05.01';
+export const title = 'Solving z-index with styled-components';
 
-
-exports.date = '2018.05.01';
-exports.title = 'Solving z-index with styled-components';
-
-exports.excerpt = oneLine`
+export const excerpt = oneLine`
   Follow these simple steps if you don't want to guess the right z-index value ever again.
 `;
 
-exports.body = stripIndent`
+export const body = stripIndent`
   ### CSS is ok-ish now
 
   CSS is known for some quirks that have been driving people mad since they started creating web "apps" (as opposed to just documents with hyperlinks).

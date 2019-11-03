@@ -1,9 +1,6 @@
-'use strict';
+import { makeExecutableSchema } from 'graphql-tools';
 
-const { makeExecutableSchema } = require('graphql-tools');
-
-const posts = require('./posts');
-
+import posts from './posts';
 
 const typeDefs = `
   interface PostMeta {

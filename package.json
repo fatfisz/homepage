@@ -1,38 +1,30 @@
 {
   "private": true,
   "dependencies": {
+    "@next/bundle-analyzer": "^9.1.2",
     "babel-plugin-jsx-svg-inject": "^5.0.2",
     "babel-plugin-module-resolver": "^3.2.0",
-    "classnames": "^2.2.6",
+    "classcat": "^4.0.2",
     "codemirror": "^5.49.2",
     "common-tags": "^1.8.0",
     "commonmark": "^0.29.0",
     "commonmark-react-object-renderer": "^1.0.0",
-    "concurrently": "^5.0.0",
     "graphql": "^14.5.8",
     "graphql-tools": "^4.0.6",
-    "isomorphic-fetch": "^2.2.1",
-    "koa": "^2.11.0",
-    "koa-router": "^7.4.0",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^9.1.2",
-    "nodemon": "^1.19.4",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-from-object": "^1.0.3",
     "slugify": "^1.3.5",
-    "svgo": "^1.3.2",
-    "webpack-bundle-analyzer": "^3.6.0"
+    "svgo": "^1.3.2"
   },
   "scripts": {
     "analyze": "webpack-bundle-analyzer .next/stats.json",
     "build": "next build",
     "build-images": "svgo -f images/raw -o images --config=.svgo && svgo -f images/raw-static -o static --config=.svgo",
-    "dev": "concurrently -k -p name -n SERVER,API -c blue,cyan \"yarn dev-server\" \"yarn dev-api-server\"",
-    "dev-api-server": "nodemon api-server --watch api-server --watch utils",
-    "dev-server": "nodemon server.js --watch server.js",
-    "start": "concurrently -k -p name -n SERVER,API -c blue,cyan \"yarn start-server\" \"yarn start-api-server\"",
-    "start-api-server": "node api-server",
-    "start-server": "node server.js"
+    "dev": "next dev",
+    "start": "next start"
   }
 }

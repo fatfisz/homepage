@@ -1,18 +1,15 @@
-'use strict';
+import { oneLine, stripIndent } from 'common-tags';
 
-const { oneLine, stripIndent } = require('common-tags');
+export const date = '2018.08.05';
+export const title = 'Dual-mode React components with getDerivedStateFromProps';
 
-
-exports.date = '2018.08.05';
-exports.title = 'Dual-mode React components with getDerivedStateFromProps';
-
-exports.excerpt = oneLine`
+export const excerpt = oneLine`
   Over the past year React received a few new features that make developing apps easier.
   One of them is the getDerivedStateFromProps method, a replacement for componentWillReceiveProps.
   I don't need it 95% of the time, but when I do, I follow this pattern...
 `;
 
-exports.body = stripIndent`
+export const body = stripIndent`
   Over the past year React received a few new features that make developing apps easier.
   One of them is the \`getDerivedStateFromProps\` method, a replacement \`componentWillReceiveProps\`.
   I don't need it [95% of the time](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html), but when I do, I follow this pattern:

@@ -1,19 +1,16 @@
-'use strict';
+import { oneLine, stripIndent } from 'common-tags';
 
-const { oneLine, stripIndent } = require('common-tags');
+export const date = '2017.05.13';
+export const title = 'Color as a background image';
 
-
-exports.date = '2017.05.13';
-exports.title = 'Color as a background image';
-
-exports.excerpt = oneLine`
+export const excerpt = oneLine`
   Hi, welcome to my blog!
   I will be writing mostly about the front-end stuff, JS in general, and also a bit about what I do outside of work.
   I like to eat outside sometimes, so you can expect some posts with photos about places to eat in Warsaw.
   In this post, however, I won't be writing about food.
 `;
 
-exports.body = stripIndent`
+export const body = stripIndent`
   ### Introduction
 
   Hi, welcome to my blog!

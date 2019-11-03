@@ -8,7 +8,6 @@ import CodeExampleStyles from 'components/code-example-styles';
 import DisqusLink from 'components/disqus-link';
 import Title from 'components/title';
 
-
 export default function Post({ body, date, excerpt, id, title }) {
   const href = `/blog/${id}`;
 
