@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Fragment } from 'react';
 
 import GlobalStyles from 'components/body/global-styles';
 import Header from 'components/body/header';
@@ -7,7 +8,7 @@ import Title from 'components/title';
 
 export default function Body({ children }) {
   return (
-    <div>
+    <Fragment>
       <Title />
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,6 +29,6 @@ export default function Body({ children }) {
           {children}
         </main>
       </Container>
-    </div>
+    </Fragment>
   );
 }
