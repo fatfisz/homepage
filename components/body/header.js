@@ -10,6 +10,7 @@ export default function Header() {
           <img
             className="gravatar"
             src="https://www.gravatar.com/avatar/dcc938049e3618d715d4e45eeb2cc314"
+            alt="my face"
           />
           <div className="title">
             FatFisz's homepage
