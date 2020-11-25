@@ -1,6 +1,5 @@
-import Error from 'next/error';
-
 import Post from 'components/post';
+import Error from 'next/error';
 import fetchApi from 'utils/fetch-api';
 
 export default function PostPage({ post }) {
@@ -11,7 +10,7 @@ export default function PostPage({ post }) {
   }
 }
 
-PostPage.getInitialProps = async ({ query: { id }, req, }) => {
+PostPage.getInitialProps = async ({ query: { id }, req }) => {
   const isServer = Boolean(req);
   const { post } = await fetchApi(Post.getQuery(id), isServer);
   return { post };

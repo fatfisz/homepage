@@ -1,12 +1,11 @@
+import Body from 'components/body';
+import CodeExampleStyles from 'components/code-example-styles';
+import Disqus from 'components/disqus';
+import DisqusLink from 'components/disqus-link';
+import Title from 'components/title';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import reactFromObject from 'react-from-object';
-
-import Body from 'components/body';
-import Disqus from 'components/disqus';
-import CodeExampleStyles from 'components/code-example-styles';
-import DisqusLink from 'components/disqus-link';
-import Title from 'components/title';
 
 export default function Post({ body, date, excerpt, id, title }) {
   const href = `/blog/${id}`;
@@ -20,9 +19,7 @@ export default function Post({ body, date, excerpt, id, title }) {
       </Head>
 
       <h5 className="date-header">
-        <div className="date">
-          {date}
-        </div>
+        <div className="date">{date}</div>
         <DisqusLink href={href} id={id} />
       </h5>
 

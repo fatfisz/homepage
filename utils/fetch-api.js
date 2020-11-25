@@ -1,7 +1,11 @@
 import fetch from 'isomorphic-unfetch';
 
-const clientApiUrl = process.env.NODE_ENV === 'production' ? 'https://fatfisz.com/api' : 'http://localhost:3000/api';
-const serverApiUrl = process.env.NODE_ENV === 'production' ? `http://localhost:${process.env.SERVER_PORT}/api` : 'http://localhost:3000/api';
+const clientApiUrl =
+  process.env.NODE_ENV === 'production' ? 'https://fatfisz.com/api' : 'http://localhost:3000/api';
+const serverApiUrl =
+  process.env.NODE_ENV === 'production'
+    ? `http://localhost:${process.env.SERVER_PORT}/api`
+    : 'http://localhost:3000/api';
 
 export default async function fetchApi(body, isServer) {
   const apiUrl = isServer ? serverApiUrl : clientApiUrl;
@@ -26,4 +30,4 @@ export default async function fetchApi(body, isServer) {
   }
 
   throw new Error('Unexpected error :(');
-};
+}

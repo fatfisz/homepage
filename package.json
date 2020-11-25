@@ -20,11 +20,18 @@
     "slugify": "^1.3.5",
     "svgo": "^1.3.2"
   },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-fatfisz": "^3.0.7",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  },
   "scripts": {
     "analyze": "webpack-bundle-analyzer .next/stats.json",
     "build": "next build",
     "build-images": "svgo -f images/raw -o images --config=.svgo && svgo -f images/raw-static -o static --config=.svgo",
     "dev": "next dev",
+    "lint": "eslint ./",
     "start": "next start"
   }
 }

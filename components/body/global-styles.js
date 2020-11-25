@@ -1,4 +1,4 @@
-import { grey200, grey600, grey800, grey900, indigo300 } from 'constants/colors';
+import { grey200, grey600, grey800, grey900, indigo300 } from 'const/colors';
 
 const overlayColor = 'rgba(255, 255, 255, 0.8)';
 
@@ -20,8 +20,7 @@ export default function GlobalStyles() {
       }
 
       body {
-        background-image:
-          linear-gradient(0deg, ${overlayColor}, ${overlayColor}),
+        background-image: linear-gradient(0deg, ${overlayColor}, ${overlayColor}),
           url(/static/background.svg);
         background-position: center top;
         background-repeat: repeat-y, repeat;
@@ -57,7 +56,8 @@ export default function GlobalStyles() {
       a:hover {
         text-decoration: underline;
       }
-      a:focus, a:hover {
+      a:focus,
+      a:hover {
         /* Color(indigo300).darken(0.1) */
         color: hsl(230.5, 44.1%, 57.2%);
       }
@@ -81,7 +81,12 @@ export default function GlobalStyles() {
         padding: 0.125rem 0.25rem;
       }
 
-      h1, h2, h3, h4, h5, h6 {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         margin: 1.25em 0;
       }
 
@@ -109,21 +114,27 @@ export default function GlobalStyles() {
         }
       }
 
-      p, ol, ul {
+      p,
+      ol,
+      ul {
         line-height: 1.8;
         margin: 1rem 0;
       }
 
-      ol, ul {
+      ol,
+      ul {
         padding-left: 40px;
       }
 
       @media (max-width: 575px) {
-        p, ol, ul {
+        p,
+        ol,
+        ul {
           margin: 0.75rem 0;
         }
 
-        ol, ul {
+        ol,
+        ul {
           padding-left: 30px;
         }
       }

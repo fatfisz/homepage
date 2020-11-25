@@ -1,6 +1,5 @@
-import { graphql } from 'graphql';
-
 import getSchema from 'api/get-schema';
+import { graphql } from 'graphql';
 
 const schema = getSchema();
 

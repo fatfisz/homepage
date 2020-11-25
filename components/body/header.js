@@ -1,6 +1,5 @@
 import Menu from 'components/body/menu';
 import Container from 'components/container';
-import { grey100 } from 'constants/colors';
 
 export default function Header() {
   return (
@@ -12,9 +11,7 @@ export default function Header() {
             src="https://www.gravatar.com/avatar/dcc938049e3618d715d4e45eeb2cc314"
             alt="my face"
           />
-          <div className="title">
-            FatFisz's homepage
-          </div>
+          <div className="title">FatFisz&apos;s homepage</div>
           <Menu />
         </nav>
       </Container>

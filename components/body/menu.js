@@ -1,9 +1,8 @@
 import cc from 'classcat';
+import Image from 'components/image';
+import { grey200, grey800 } from 'const/colors';
 import Link from 'next/link';
 import { useState } from 'react';
-
-import Image from 'components/image';
-import { grey100, grey200, grey800 } from 'constants/colors';
 
 const links = [
   { href: '/', label: 'Home' },
@@ -22,11 +21,11 @@ export default function Menu() {
   return (
     <div className="menu-container">
       <div className="menu">
-        {links.map(({ href, label }) =>
+        {links.map(({ href, label }) => (
           <Link key={href} href={href}>
             <a className="link">{label}</a>
           </Link>
-        )}
+        ))}
       </div>
 
       <div
@@ -46,11 +45,11 @@ export default function Menu() {
           className={cc(['mobile-links showable', { 'mod-visible': mobileMenuVisible }])}
           onClick={() => setMobileMenuVisible(false)}
         >
-          {links.map(({ href, label }) =>
+          {links.map(({ href, label }) => (
             <Link key={href} href={href}>
               <a className="mobile-link">{label}</a>
             </Link>
-          )}
+          ))}
         </div>
       </div>
 
@@ -87,7 +86,8 @@ export default function Menu() {
         .link:hover {
           background-color: ${selectedItemBackgroundColor};
         }
-        .link:focus,.link:hover {
+        .link:focus,
+        .link:hover {
           color: ${selectedItemColor};
         }
 

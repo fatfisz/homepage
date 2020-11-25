@@ -1,27 +1,28 @@
+import disqusShortname from 'const/disqus-shortname';
 import PropTypes from 'prop-types';
 import { Component } from 'react';
-
-import disqusShortname from 'constants/disqus-shortname';
 
 function getDisqusConfigFunction({ id, url }) {
   return function () {
     this.page.url = `https://fatfisz.com${url}`;
     this.page.identifier = id;
-    this.callbacks.onNewComment = [() => {
-      if (window.DISQUSWIDGETS) {
-        window.DISQUSWIDGETS.getCount(id);
-      }
-    }];
+    this.callbacks.onNewComment = [
+      () => {
+        if (window.DISQUSWIDGETS) {
+          window.DISQUSWIDGETS.getCount(id);
+        }
+      },
+    ];
   };
 }
 
 function addDisqus(props) {
   window.disqus_config = getDisqusConfigFunction(props);
 
-  const script = document.createElement('script');
+  const script = window.document.createElement('script');
   script.src = `https://${disqusShortname}.disqus.com/embed.js`;
   script.dataset.timestamp = Date.now();
-  document.head.appendChild(script);
+  window.document.head.appendChild(script);
 }
 
 function resetDisqus(props) {
@@ -39,7 +40,7 @@ export default class Disqus extends Component {
 
   componentDidMount() {
     if (window.DISQUS) {
-      resetDisqus(this.props)
+      resetDisqus(this.props);
     } else {
       addDisqus(this.props);
     }

@@ -11,7 +11,7 @@ const whitespaceRegExp = /\s+/g;
 function styleToClassName(style) {
   return style
     .split(whitespaceRegExp)
-    .map(part => `cm-${part}`)
+    .map((part) => `cm-${part}`)
     .join(' ');
 }
 
@@ -23,7 +23,7 @@ function highlight(language, code) {
   }
 
   if (!CodeMirror.modes[mode.mode]) {
-    throw new Error(`Mode ${mode.mode} is not supported, did you forget to pre-require it?`)
+    throw new Error(`Mode ${mode.mode} is not supported, did you forget to pre-require it?`);
   }
 
   const children = [];

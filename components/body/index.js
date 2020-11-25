@@ -1,10 +1,9 @@
-import Head from 'next/head';
-import { Fragment } from 'react';
-
 import GlobalStyles from 'components/body/global-styles';
 import Header from 'components/body/header';
 import Container from 'components/container';
 import Title from 'components/title';
+import Head from 'next/head';
+import { Fragment } from 'react';
 
 export default function Body({ children }) {
   return (
@@ -16,7 +15,10 @@ export default function Body({ children }) {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@fatfisz" />
         <meta name="og:type" content="website" />
-        <meta name="og:image" content="https://www.gravatar.com/avatar/dcc938049e3618d715d4e45eeb2cc314" />
+        <meta
+          name="og:image"
+          content="https://www.gravatar.com/avatar/dcc938049e3618d715d4e45eeb2cc314"
+        />
         <meta name="og:description" content="FatFisz's humble homepage." />
       </Head>
 
@@ -25,9 +27,7 @@ export default function Body({ children }) {
       <Header />
 
       <Container>
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
       </Container>
     </Fragment>
   );
