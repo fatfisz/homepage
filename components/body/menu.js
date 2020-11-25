@@ -30,20 +30,20 @@ export default function Menu() {
       </div>
 
       <div
-        className={cc('overlay showable', { 'mod-visible': mobileMenuVisible })}
+        className={cc(['overlay showable', { 'mod-visible': mobileMenuVisible }])}
         onClick={() => setMobileMenuVisible(false)}
       />
 
       <div className="menu-mobile">
         <div
-          className={cc('mobile-button', { 'mod-active': mobileMenuVisible })}
+          className={cc(['mobile-button', { 'mod-active': mobileMenuVisible }])}
           onClick={() => setMobileMenuVisible(true)}
         >
           <Image svgName="hamburger" fill="currentColor" />
         </div>
 
         <div
-          className={cc('mobile-links showable', { 'mod-visible': mobileMenuVisible })}
+          className={cc(['mobile-links showable', { 'mod-visible': mobileMenuVisible }])}
           onClick={() => setMobileMenuVisible(false)}
         >
           {links.map(({ href, label }) =>
