@@ -12,6 +12,7 @@ module.exports = {
         sourceType: 'module',
       },
       globals: {
+        fetch: 'readonly',
         process: 'readonly',
       },
     },

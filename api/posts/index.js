@@ -8,9 +8,8 @@ export const posts = postsContext
   .filter((key) => key !== './index.js')
   .map(postsContext)
   .sort((a, b) => -a.date.localeCompare(b.date))
-  .map((post) =>
-    Object.assign({}, post, {
-      id: slugify(post.title),
-      body: JSON.stringify(renderMarkdown(post.body)),
-    }),
-  );
+  .map((post) => ({
+    ...post,
+    id: slugify(post.title),
+    body: JSON.stringify(renderMarkdown(post.body)),
+  }));

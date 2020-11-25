@@ -1,5 +1,3 @@
-import fetch from 'isomorphic-unfetch';
-
 const clientApiUrl =
   process.env.NODE_ENV === 'production' ? 'https://fatfisz.com/api' : 'http://localhost:3000/api';
 const serverApiUrl =
