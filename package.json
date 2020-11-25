@@ -6,7 +6,7 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "classcat": "^4.0.2",
     "codemirror": "^5.49.2",
-    "common-tags": "^1.8.0",
+    "common-tags": "^2.0.0-alpha.1",
     "commonmark": "^0.29.0",
     "commonmark-react-object-renderer": "^1.0.0",
     "graphql": "^14.5.8",
