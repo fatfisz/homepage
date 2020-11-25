@@ -1,7 +1,7 @@
-import Menu from 'components/body/menu';
-import Container from 'components/container';
+import { Menu } from 'components/body/menu';
+import { Container } from 'components/container';
 
-export default function Header() {
+export function Header() {
   return (
     <div className="navigation-background">
       <Container>

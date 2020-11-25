@@ -1,5 +1,5 @@
 import cc from 'classcat';
-import Image from 'components/image';
+import { Image } from 'components/image';
 import { grey200, grey800 } from 'const/colors';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -15,7 +15,7 @@ const selectedItemBackgroundColor = 'hsla(0, 0%, 91.3%, 0.8)';
 // Color(grey800).darken(0.1)
 const selectedItemColor = 'hsl(0, 0%, 23.3%)';
 
-export default function Menu() {
+export function Menu() {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
 
   return (

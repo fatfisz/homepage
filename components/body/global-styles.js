@@ -2,7 +2,7 @@ import { grey200, grey600, grey800, grey900, indigo300 } from 'const/colors';
 
 const overlayColor = 'rgba(255, 255, 255, 0.8)';
 
-export default function GlobalStyles() {
+export function GlobalStyles() {
   return (
     <style jsx global>{`
       * {

@@ -1,10 +1,10 @@
-import slugify from 'slugify';
+import baseSlugify from 'slugify';
 
-slugify.extend({
+baseSlugify.extend({
   '.': ' ',
   ':': ' ',
 });
 
-module.exports = function slugifyUtil(...args) {
-  return slugify(...args).toLowerCase();
-};
+export function slugify(...args) {
+  return baseSlugify(...args).toLowerCase();
+}

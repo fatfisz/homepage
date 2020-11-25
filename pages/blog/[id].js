@@ -1,6 +1,6 @@
-import Post from 'components/post';
+import { Post } from 'components/post';
 import Error from 'next/error';
-import fetchApi from 'utils/fetch-api';
+import { fetchApi } from 'utils/fetch-api';
 
 export default function PostPage({ post }) {
   if (post) {

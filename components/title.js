@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const baseTitle = "FatFisz's homepage";
 
-export default function Title({ children }) {
+export function Title({ children }) {
   const joint = children ? ' - ' : '';
   const title = `${children}${joint}${baseTitle}`;
 

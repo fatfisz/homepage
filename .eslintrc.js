@@ -14,15 +14,17 @@ module.exports = {
       globals: {
         process: 'readonly',
       },
-      rules: {
-        // TODO: migrate to named exports
-        'import/no-default-export': 'off',
-      },
     },
     {
       files: 'components/**',
       globals: {
         window: 'readonly',
+      },
+    },
+    {
+      files: 'pages/**',
+      rules: {
+        'import/no-default-export': 'off',
       },
     },
     {

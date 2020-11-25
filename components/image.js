@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function Image({ svgName, svgContents, ...props }) {
+export function Image({ svgName, svgContents, ...props }) {
   return <svg {...props}>{svgContents}</svg>;
 }
 

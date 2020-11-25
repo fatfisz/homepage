@@ -1,11 +1,11 @@
-import GlobalStyles from 'components/body/global-styles';
-import Header from 'components/body/header';
-import Container from 'components/container';
-import Title from 'components/title';
+import { GlobalStyles } from 'components/body/global-styles';
+import { Header } from 'components/body/header';
+import { Container } from 'components/container';
+import { Title } from 'components/title';
 import Head from 'next/head';
 import { Fragment } from 'react';
 
-export default function Body({ children }) {
+export function Body({ children }) {
   return (
     <Fragment>
       <Title />

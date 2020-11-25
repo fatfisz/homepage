@@ -1,11 +1,11 @@
-import Body from 'components/body';
-import CodeExampleStyles from 'components/code-example-styles';
-import Title from 'components/title';
+import { Body } from 'components/body';
+import { CodeExampleStyles } from 'components/code-example-styles';
+import { Title } from 'components/title';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import reactFromObject from 'react-from-object';
 
-export default function Post({ body, date, excerpt, id, title }) {
+export function Post({ body, date, excerpt, id, title }) {
   const href = `/blog/${id}`;
 
   return (

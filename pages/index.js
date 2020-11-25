@@ -1,4 +1,4 @@
-import Body from 'components/body';
+import { Body } from 'components/body';
 import Link from 'next/link';
 
 export default function IndexPage() {

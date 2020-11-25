@@ -1,6 +1,6 @@
 import { makeExecutableSchema } from 'graphql-tools';
 
-import posts from './posts';
+import { posts } from './posts';
 
 const typeDefs = `
   interface PostMeta {
@@ -49,6 +49,6 @@ const resolvers = {
   },
 };
 
-module.exports = function getSchema() {
+export function getSchema() {
   return makeExecutableSchema({ typeDefs, resolvers });
-};
+}

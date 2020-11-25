@@ -1,5 +1,5 @@
-import Body from 'components/body';
-import Title from 'components/title';
+import { Body } from 'components/body';
+import { Title } from 'components/title';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -11,7 +11,7 @@ function PostLink({ children, id }) {
   );
 }
 
-export default function PostList({ posts }) {
+export function PostList({ posts }) {
   return (
     <Body>
       <Title>Posts</Title>

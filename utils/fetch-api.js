@@ -7,7 +7,7 @@ const serverApiUrl =
     ? `http://localhost:${process.env.SERVER_PORT}/api`
     : 'http://localhost:3000/api';
 
-export default async function fetchApi(body, isServer) {
+export async function fetchApi(body, isServer) {
   const apiUrl = isServer ? serverApiUrl : clientApiUrl;
   const response = await fetch(apiUrl, {
     method: 'POST',

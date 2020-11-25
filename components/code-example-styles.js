@@ -1,4 +1,4 @@
-export default function CodeExampleStyles() {
+export function CodeExampleStyles() {
   return (
     <style jsx global>{`
       .code-example {

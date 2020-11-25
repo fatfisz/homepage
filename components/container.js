@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function Container({ children, ...props }) {
+export function Container({ children, ...props }) {
   return (
     <div className="container" {...props}>
       {children}

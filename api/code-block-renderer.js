@@ -58,7 +58,7 @@ function highlight(language, code) {
   return children;
 }
 
-module.exports = function codeBlockRenderer({ info, literal }) {
+export function codeBlockRenderer({ info, literal }) {
   return {
     type: 'pre',
     props: {
@@ -66,4 +66,4 @@ module.exports = function codeBlockRenderer({ info, literal }) {
     },
     children: highlight(info, literal),
   };
-};
+}
