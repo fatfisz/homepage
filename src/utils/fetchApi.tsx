@@ -5,15 +5,9 @@ const serverApiUrl =
     ? `http://localhost:${process.env.SERVER_PORT}/api`
     : 'http://localhost:3000/api';
 
-export async function fetchApi<Result>(body: string, isServer: boolean): Promise<Result> {
+export async function fetchApi<Result>(path: string, isServer: boolean): Promise<Result> {
   const apiUrl = isServer ? serverApiUrl : clientApiUrl;
-  const response = await fetch(apiUrl, {
-    method: 'POST',
-    body,
-    headers: {
-      'content-type': 'application/graphql',
-    },
-  });
+  const response = await fetch(`${apiUrl}${path}`);
 
   if (response.ok) {
     const { data, errors } = await response.json();

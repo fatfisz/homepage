@@ -37,15 +37,3 @@ export function PostView({ body, date, excerpt, id, title }: Post): ReactElement
     </Body>
   );
 }
-
-PostView.getQuery = (id: string) => `
-  {
-    post(id: ${JSON.stringify(id)}) {
-      id
-      date
-      title
-      excerpt
-      body
-    }
-  }
-`;

@@ -10,6 +10,5 @@ export default function PostListPage({ posts }: { posts: ApiShortPost[] }): Reac
 
 PostListPage.getInitialProps = async ({ req }: NextPageContext) => {
   const isServer = Boolean(req);
-  const { posts } = await fetchApi<{ posts: ApiShortPost[] }>(PostList.getQuery(), isServer);
-  return { posts };
+  return { posts: await fetchApi<ApiShortPost[]>('/posts', isServer) };
 };

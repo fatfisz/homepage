@@ -47,14 +47,3 @@ export function PostList({ posts }: { posts: ApiShortPost[] }): ReactElement {
     </Body>
   );
 }
-
-PostList.getQuery = () => `
-  {
-    posts {
-      id
-      date
-      title
-      excerpt
-    }
-  }
-`;

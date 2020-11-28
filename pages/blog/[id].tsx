@@ -18,8 +18,7 @@ export default function PostPage({ post }: { post: ApiPost | null }): ReactEleme
 
 PostPage.getInitialProps = async ({ query: { id }, req }: NextPageContext) => {
   const isServer = Boolean(req);
-  const { post } = await fetchApi<{ post: ApiPost }>(PostView.getQuery(id as string), isServer);
-  return { post };
+  return { post: await fetchApi<ApiPost>(`/posts/${id}`, isServer) };
 };
 
 function useProcessedPost(post: ApiPost | null): Post | null {
