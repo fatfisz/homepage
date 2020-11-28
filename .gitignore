@@ -1,5 +1,6 @@
 # Node + garbage
 node_modules
+*.log
 
 # Build + private
 .next

@@ -23,7 +23,7 @@ module.exports = {
       },
     },
     {
-      files: 'pages/**',
+      files: ['**/*.d.ts', 'pages/**'],
       rules: {
         'import/no-default-export': 'off',
       },
