@@ -1,10 +1,9 @@
-import { Body } from 'components/Body';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 
 export default function IndexPage(): ReactElement {
   return (
-    <Body>
+    <>
       <h2>Hi, I&apos;m Rafał.</h2>
 
       <h3>Some people call me FatFisz.</h3>
@@ -29,6 +28,6 @@ export default function IndexPage(): ReactElement {
         </Link>{' '}
         about front-end programming.
       </p>
-    </Body>
+    </>
   );
 }

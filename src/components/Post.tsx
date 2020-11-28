@@ -2,14 +2,13 @@ import Head from 'next/head';
 import { ReactElement } from 'react';
 import { Post } from 'types';
 
-import { Body } from './Body';
 import { CodeExampleStyles } from './CodeExampleStyles';
 import { Title } from './Title';
 
 export function PostView({ body, date, excerpt, id, title }: Post): ReactElement {
   const href = `/blog/${id}`;
   return (
-    <Body>
+    <>
       <Title>{title}</Title>
       <Head>
         <meta name="og:url" content={`https://fatfisz.com${href}`} />
@@ -34,6 +33,6 @@ export function PostView({ body, date, excerpt, id, title }: Post): ReactElement
           flex: 1 1 auto;
         }
       `}</style>
-    </Body>
+    </>
   );
 }

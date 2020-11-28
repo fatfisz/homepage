@@ -1,18 +1,17 @@
-import { Body } from 'components/Body';
 import { Title } from 'components/Title';
 import { ReactElement } from 'react';
 
 export default function AboutPage(): ReactElement {
   return (
-    <Body>
-      <Title>About me</Title>
+    <>
+      <Title>About</Title>
 
       <p>
-        My name&apos;s Rafał Ruciński and I was born in a beautiful city of Szczecin, Poland. For
-        the past few years I&apos;ve been stuck in Warsaw.
+        My name&apos;s Rafał Ruciński. I was born in the beautiful city of Szczecin, Poland; right
+        now I live in Warsaw.
       </p>
       <p>
-        I&apos;m a front-end developer by trade. Currently I&apos;m a part of the
+        I&apos;m a front-end developer by trade. Currently I&apos;m a part of the{' '}
         <a href="https://www.tooploox.com/">Tooploox</a> team.
       </p>
       <p>
@@ -43,25 +42,6 @@ export default function AboutPage(): ReactElement {
           runner
         </li>
       </ul>
-      <p>Fun facts:</p>
-      <ul>
-        <li>
-          Both people in Poland and outside of it usually write &quot;fatfi<strong>sh</strong>&quot;
-          instead of &quot;fatfi<strong>sz</strong>&quot; the first time. I have one troublesome
-          nick, but it&apos;s a great conversation starter
-        </li>
-        <li>
-          I&apos;ve been playing computer games since I was one year old (please don&apos;t judge
-          me). Here are some of the games I currently play from time to time:{' '}
-          <a href="https://store.steampowered.com/app/427520/Factorio/">Factorio</a>,{' '}
-          <a href="https://store.steampowered.com/app/457140/Oxygen_Not_Included/">
-            Oxygen Not Included
-          </a>
-          , <a href="http://store.steampowered.com/app/105600/Terraria/">Terraria</a>, and{' '}
-          <a href="http://store.steampowered.com/app/570/Dota_2/">Dota 2</a> (a love-hate
-          relationship)
-        </li>
-      </ul>
-    </Body>
+    </>
   );
 }

@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { ReactElement, ReactNode } from 'react';
 import { ApiShortPost } from 'types';
 
-import { Body } from './Body';
 import { Title } from './Title';
 
 function PostLink({ children, id }: { children: ReactNode; id: string }): ReactElement {
@@ -12,7 +11,7 @@ function PostLink({ children, id }: { children: ReactNode; id: string }): ReactE
 
 export function PostList({ posts }: { posts: ApiShortPost[] }): ReactElement {
   return (
-    <Body>
+    <>
       <Title>Posts</Title>
       <Head>
         <meta name="og:url" content="https://fatfisz.com/blog" />
@@ -44,6 +43,6 @@ export function PostList({ posts }: { posts: ApiShortPost[] }): ReactElement {
           margin-top: 4rem;
         }
       `}</style>
-    </Body>
+    </>
   );
 }

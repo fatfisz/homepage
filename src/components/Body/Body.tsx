@@ -20,7 +20,7 @@ export function Body({ children }: { children: ReactNode }): ReactElement {
           name="og:image"
           content="https://www.gravatar.com/avatar/dcc938049e3618d715d4e45eeb2cc314"
         />
-        <meta name="og:description" content="FatFisz's humble homepage." />
+        <meta name="og:description" content="FatFisz's homepage." />
       </Head>
 
       <GlobalStyles />
