@@ -12,8 +12,8 @@ export default function AboutPage(): ReactElement {
         the past few years I&apos;ve been stuck in Warsaw.
       </p>
       <p>
-        I&apos;m a front-end developer by trade. Currently I&apos;m trying to make{' '}
-        <a href="https://codility.com/">Codility</a> more awesome.
+        I&apos;m a front-end developer by trade. Currently I&apos;m a part of the
+        <a href="https://www.tooploox.com/">Tooploox</a> team.
       </p>
       <p>
         After work I enjoy bouldering. From time to time I also play music on whatever instrument I

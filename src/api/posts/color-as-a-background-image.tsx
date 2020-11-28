@@ -24,7 +24,7 @@ export const body = stripIndent`
   It had to consist of a pattern that covers the whole viewport, and a single-color overlay beneath the text.
   The purpose of the overlay was to make the text more clear - otherwise the pattern was introducing too much noise.
 
-  In the first version the overlay was only surrounding the text, but the idea was discarded after consulting with one of the wonderful designers I have a pleasure working with at [Codility](https://codility.com).
+  In the first version the overlay was only surrounding the text, but the idea was discarded after consulting with one of the designers I worked with at [Codility](https://codility.com).
   Instead I was supposed to make the overlay take the whole height of the viewport.
 
   I had previously created a similar background for another website (which is no more, unfortunately), so I knew a way of achieving the desired effect.

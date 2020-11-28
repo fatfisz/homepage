@@ -24,7 +24,7 @@ export const body = stripIndent`
 
   I'm using [Next.js](https://github.com/zeit/next.js) at work and for this very website.
   It comes with its own \`next/babel\` preset, which explicitly has module transformation turned off (for [Webpack](https://webpack.js.org/)).
-  At [Codility](https://codility.com/) we're using [Mocha](https://mochajs.org) for tests and it doesn't handle \'import\` statements at the time.
+  At [Codility](https://codility.com/) we were using [Mocha](https://mochajs.org) for tests and it didn't handle \'import\` statements at the time.
   We still needed to use the presets and plugins from \'next/babel\', so the first attempt at making this work looked like this:
 
   \`\`\`json
