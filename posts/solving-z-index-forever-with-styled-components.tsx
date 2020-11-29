@@ -49,7 +49,7 @@ export const body = stripIndent`
   Of course using names like \`level1\`, \`level2\`, ... and so on is rather redundant,
   so what you should do instead is think of the types of components that you have in your website and how you want them to be displayed together.
 
-  As we started build a library of components at [Codility](https://codility.com/), I added a definition like this:
+  As we started building a library of components at [Codility](https://codility.com/), I added a definition like this:
 
   \`\`\`js
   import { fromPairs } from 'lodash';
