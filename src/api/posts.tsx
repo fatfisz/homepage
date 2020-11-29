@@ -2,7 +2,7 @@ import { renderMarkdown } from './renderMarkdown';
 import { slugify } from './slugify';
 import { ApiPostContent, ApiShortPost } from './types';
 
-const postsContext = require.context('./posts', false, /\.tsx$/);
+const postsContext = require.context('../../posts', false, /\.tsx$/);
 
 export const posts = postsContext
   .keys()
