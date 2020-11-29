@@ -112,11 +112,7 @@ export class Points {
     if (mouse) {
       for (const xOffset of [-this.width, 0, this.width]) {
         for (const yOffset of [-this.height, 0, this.height]) {
-          yield {
-            x: mouse.x - this.xOffset + xOffset,
-            y: mouse.y - this.yOffset + yOffset,
-            mass: mouseMass,
-          };
+          yield { x: mouse.x + xOffset, y: mouse.y + yOffset, mass: mouseMass };
         }
       }
     }

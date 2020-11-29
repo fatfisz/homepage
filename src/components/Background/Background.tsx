@@ -2,13 +2,13 @@ import { ReactElement, useEffect, useRef } from 'react';
 
 import { Points } from './points';
 import { finishDraw, startDraw } from './shapes';
-import { useMousePoint } from './useMousePoint';
+import { useMousePosition } from './useMousePosition';
 
 const doublingThreshold = 50;
 
 export function Background(): ReactElement {
   const root = useRef<HTMLCanvasElement>(null);
-  const mouse = useMousePoint();
+  const mouse = useMousePosition();
 
   useEffect(() => {
     const context = root.current?.getContext('2d');
