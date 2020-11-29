@@ -1,6 +1,6 @@
+import { Post } from 'api/types';
 import Head from 'next/head';
 import { ReactElement } from 'react';
-import { Post } from 'types';
 
 import { CodeExampleStyles } from './CodeExampleStyles';
 import { Title } from './Title';

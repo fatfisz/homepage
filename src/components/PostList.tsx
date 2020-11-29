@@ -1,7 +1,7 @@
+import { ApiShortPost } from 'api/types';
 import Head from 'next/head';
 import Link from 'next/link';
 import { ReactElement, ReactNode } from 'react';
-import { ApiShortPost } from 'types';
 
 import { Title } from './Title';
 

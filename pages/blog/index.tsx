@@ -1,14 +1,21 @@
+import { shortPosts } from 'api/posts';
+import { ApiShortPost } from 'api/types';
 import { PostList } from 'components/PostList';
-import { NextPageContext } from 'next';
+import { GetStaticProps } from 'next';
 import { ReactElement } from 'react';
-import { ApiShortPost } from 'types';
-import { fetchApi } from 'utils/fetchApi';
 
-export default function PostListPage({ posts }: { posts: ApiShortPost[] }): ReactElement {
+interface Props {
+  posts: ApiShortPost[];
+}
+
+export default function PostListPage({ posts }: Props): ReactElement {
   return <PostList posts={posts} />;
 }
 
-PostListPage.getInitialProps = async ({ req }: NextPageContext) => {
-  const isServer = Boolean(req);
-  return { posts: await fetchApi<ApiShortPost[]>('/posts', isServer) };
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  return {
+    props: {
+      posts: shortPosts,
+    },
+  };
 };
