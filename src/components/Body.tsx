@@ -1,11 +1,11 @@
-import { Background } from 'components/Background';
-import { Container } from 'components/Container';
-import { Title } from 'components/Title';
 import Head from 'next/head';
 import { ReactElement, ReactNode } from 'react';
 
+import { Background } from './Background';
+import { Container } from './Container';
 import { GlobalStyles } from './GlobalStyles';
 import { Header } from './Header';
+import { Title } from './Title';
 
 export function Body({ children }: { children: ReactNode }): ReactElement {
   return (

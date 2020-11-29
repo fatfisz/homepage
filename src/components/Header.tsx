@@ -1,6 +1,6 @@
-import { Container } from 'components/Container';
 import { ReactElement } from 'react';
 
+import { Container } from './Container';
 import { Menu } from './Menu';
 
 export function Header(): ReactElement {
