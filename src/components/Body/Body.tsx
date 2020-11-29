@@ -1,14 +1,15 @@
+import { Background } from 'components/Background';
 import { Container } from 'components/Container';
 import { Title } from 'components/Title';
 import Head from 'next/head';
-import { Fragment, ReactElement, ReactNode } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
 import { GlobalStyles } from './GlobalStyles';
 import { Header } from './Header';
 
 export function Body({ children }: { children: ReactNode }): ReactElement {
   return (
-    <Fragment>
+    <>
       <Title />
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,6 +31,8 @@ export function Body({ children }: { children: ReactNode }): ReactElement {
       <Container>
         <main>{children}</main>
       </Container>
-    </Fragment>
+
+      <Background />
+    </>
   );
 }

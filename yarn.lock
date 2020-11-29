@@ -6579,6 +6579,11 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
+tweakpane@^1.5.7:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/tweakpane/-/tweakpane-1.5.7.tgz#b627b284b61e49d41daab9628c75b278d7ac77f9"
+  integrity sha512-9CsPb/afoS6xowCKMh+lvSvuUSKebPUTNHDAkfnbkrdt8DRhIrN+WoARGt9V7fEcLTHEB/JnXToX+sKDbb3Hww==
+
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/type-check/-/type-check-0.4.0.tgz#07b8203bfa7056c0657050e3ccd2c37730bab8f1"

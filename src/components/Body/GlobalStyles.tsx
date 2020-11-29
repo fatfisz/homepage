@@ -1,7 +1,5 @@
-import { grey200, grey600, grey800, grey900, indigo300 } from 'const/colors';
+import { grey200, grey600, grey900, indigo300 } from 'const/colors';
 import { ReactElement } from 'react';
-
-const overlayColor = 'rgba(255, 255, 255, 0.3)';
 
 export function GlobalStyles(): ReactElement {
   return (
@@ -21,33 +19,7 @@ export function GlobalStyles(): ReactElement {
       }
 
       body {
-        background-image: linear-gradient(0deg, ${overlayColor}, ${overlayColor}),
-          url(/static/background.svg);
-        background-position: center top;
-        background-repeat: repeat-y, repeat;
-        background-size: 100% 1px, 400px;
-        color: ${grey800};
         margin: 0;
-      }
-      @media (min-width: 576px) {
-        body {
-          background-size: 540px 1px, 400px;
-        }
-      }
-      @media (min-width: 768px) {
-        body {
-          background-size: 720px 1px, 400px;
-        }
-      }
-      @media (min-width: 992px) {
-        body {
-          background-size: 960px 1px, 400px;
-        }
-      }
-      @media (min-width: 1200px) {
-        body {
-          background-size: 1140px 1px, 400px;
-        }
       }
 
       a {
