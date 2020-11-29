@@ -1,4 +1,4 @@
-import { grey200, grey600, grey900, indigo300 } from 'const/colors';
+import { grey200, grey600, indigo300 } from 'const/colors';
 import { ReactElement } from 'react';
 
 export function GlobalStyles(): ReactElement {
@@ -40,18 +40,20 @@ export function GlobalStyles(): ReactElement {
       }
 
       blockquote {
-        border-left: 0.375rem solid ${grey200};
+        border-left: 0.2rem solid ${grey200};
         color: ${grey600};
         margin: 0;
         padding-left: 2rem;
       }
 
       code {
-        background-color: ${grey200};
-        border-radius: 0.125rem;
-        color: ${grey900};
-        font-size: 0.875rem;
-        padding: 0.125rem 0.25rem;
+        background-color: #212121;
+        border-radius: 0.2rem;
+        color: #eeffff;
+        display: inline-block;
+        font-size: 0.9rem;
+        line-height: 1.25rem;
+        padding: 0 0.2rem;
       }
 
       h1,
@@ -60,7 +62,7 @@ export function GlobalStyles(): ReactElement {
       h4,
       h5,
       h6 {
-        margin: 1.25em 0;
+        margin: 1.5rem 0;
       }
 
       main {
@@ -96,19 +98,14 @@ export function GlobalStyles(): ReactElement {
 
       ol,
       ul {
-        padding-left: 40px;
+        padding-left: 2rem;
       }
 
       @media (max-width: 575px) {
         p,
         ol,
         ul {
-          margin: 0.75rem 0;
-        }
-
-        ol,
-        ul {
-          padding-left: 30px;
+          margin: 1rem 0;
         }
       }
 

@@ -4,47 +4,46 @@ export function CodeExampleStyles(): ReactElement {
   return (
     <style jsx global>{`
       .code-example {
-        background-color: #263238;
-        color: #80cbc4;
+        background-color: #212121;
+        color: #89ddff;
         display: block;
-        font-size: 0.875rem;
+        font-size: 0.9rem;
         line-height: 1.5;
         overflow-x: auto;
         padding: 0.5em;
       }
-
-      .cm-atom {
-        color: #6699cc;
+      .cm-atom,
+      .cm-def {
+        color: #82aaff;
       }
       .cm-comment {
-        color: #546e7a;
-      }
-      .cm-def {
-        color: #6699cc;
+        color: #545454;
+        font-style: italic;
       }
       .cm-keyword {
-        color: #c594c5;
+        color: #c792ea;
       }
       .cm-number {
-        color: #ffeb95;
+        color: #f07178;
       }
-      .cm-property {
-        color: #cdd3de;
+      .cm-property,
+      .cm-variable,
+      .cm-variable-2 {
+        color: #eeffff;
       }
-      .cm-string {
+      .cm-string,
+      .cm-string-2 {
         color: #c3e88d;
       }
       .cm-tag {
         color: #eb606b;
       }
       .cm-tag.cm-bracket {
-        color: #80cbc4;
+        color: #89ddff;
       }
-      .cm-variable {
-        color: #cdd3de;
-      }
-      .cm-variable-2 {
-        color: #6699cc;
+      .cm-attribute {
+        color: #c792ea;
+        font-style: italic;
       }
     `}</style>
   );

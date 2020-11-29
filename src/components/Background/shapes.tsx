@@ -1,4 +1,4 @@
-import { grey50 } from 'const/colors';
+import { grey100 } from 'const/colors';
 
 import { Draw } from './types';
 
@@ -7,7 +7,7 @@ const size = 20;
 
 export function startDraw(context: CanvasRenderingContext2D): void {
   context.lineWidth = lineWidth;
-  context.strokeStyle = grey50;
+  context.strokeStyle = grey100;
   context.beginPath();
 }
 
