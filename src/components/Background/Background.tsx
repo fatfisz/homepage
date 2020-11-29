@@ -81,16 +81,47 @@ export function Background(): ReactElement {
   }, [mouse]);
 
   return (
-    <canvas
-      ref={root}
-      style={{
-        height: '100vh',
-        left: 0,
-        position: 'fixed',
-        top: 0,
-        width: '100%',
-        zIndex: -1,
-      }}
-    />
+    <>
+      <canvas ref={root} />
+      <div />
+
+      <style jsx>{`
+        canvas {
+          height: 100%;
+          left: 0;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: -1;
+        }
+
+        div {
+          background-color: #fff6;
+          height: 100%;
+          left: 50%;
+          margin: 0;
+          position: fixed;
+          top: 0;
+          transform: translateX(-50%);
+          width: 100%;
+          z-index: -1;
+        }
+        @media (min-width: 768px) {
+          div {
+            width: calc(720px - 2 * 0.5rem);
+          }
+        }
+        @media (min-width: 992px) {
+          div {
+            width: calc(960px - 2 * 6rem);
+          }
+        }
+        @media (min-width: 1200px) {
+          div {
+            width: calc(1140px - 2 * 10.5rem);
+          }
+        }
+      `}</style>
+    </>
   );
 }

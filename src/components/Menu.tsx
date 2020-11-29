@@ -60,7 +60,7 @@ export function Menu(): ReactElement {
           flex: 1 1 auto;
           justify-content: flex-end;
         }
-        @media (min-width: 576px) {
+        @media (min-width: 768px) {
           .menu-container {
             justify-content: flex-start;
           }
@@ -69,7 +69,7 @@ export function Menu(): ReactElement {
         .menu {
           display: flex;
         }
-        @media (max-width: 575px) {
+        @media (max-width: 767px) {
           .menu {
             display: none;
           }
@@ -80,7 +80,7 @@ export function Menu(): ReactElement {
           color: ${grey800};
           display: flex;
           height: 64px;
-          padding: 0 16px;
+          padding: 0 1rem;
           text-decoration: none;
           transition: background-color 0.1s ease;
         }
@@ -114,9 +114,9 @@ export function Menu(): ReactElement {
         }
 
         .menu-mobile {
-          margin-right: -16px;
+          margin-right: -1rem;
         }
-        @media (min-width: 576px) {
+        @media (min-width: 768px) {
           .menu-mobile {
             display: none;
           }
@@ -140,7 +140,6 @@ export function Menu(): ReactElement {
           position: absolute;
           right: 0;
           top: 100%;
-          width: 200px;
           z-index: 1;
         }
 
@@ -150,7 +149,7 @@ export function Menu(): ReactElement {
           color: ${grey800};
           display: flex;
           height: 48px;
-          padding: 0 16px;
+          padding: 0 1rem;
           text-decoration: none;
           transition: background-color 0.1s ease;
         }

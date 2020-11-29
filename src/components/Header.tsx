@@ -1,42 +1,38 @@
 import { ReactElement } from 'react';
 
-import { Container } from './Container';
 import { Menu } from './Menu';
 
 export function Header(): ReactElement {
   return (
-    <div className="navigation-background">
-      <Container>
-        <nav className="navigation">
-          <img
-            className="gravatar"
-            src="https://www.gravatar.com/avatar/dcc938049e3618d715d4e45eeb2cc314"
-            alt="my face"
-          />
-          <div className="title">FatFisz&apos;s homepage</div>
-          <Menu />
-        </nav>
-      </Container>
+    <>
+      <nav className="navigation">
+        <img
+          className="gravatar"
+          src="https://www.gravatar.com/avatar/dcc938049e3618d715d4e45eeb2cc314"
+          alt="my face"
+        />
+        <div className="title">FatFisz&apos;s homepage</div>
+        <Menu />
+      </nav>
 
       <style jsx>{`
-        .navigation-background {
-          /* Color(grey100).fade(0.2) */
-          background-color: rgba(245, 245, 245, 0.8);
-        }
-
         .navigation {
           align-items: center;
+          /* Color(grey100).fade(0.2) */
+          background-color: rgba(245, 245, 245, 0.8);
           display: flex;
+          padding: 0 1rem;
+          position: relative;
         }
 
         .gravatar {
           border-radius: 50%;
           display: block;
           height: 48px;
-          margin-right: 16px;
+          margin-right: 1rem;
           width: 48px;
         }
-        @media (max-width: 575px) {
+        @media (max-width: 767px) {
           .gravatar {
             height: 36px;
             width: 36px;
@@ -45,9 +41,9 @@ export function Header(): ReactElement {
 
         .title {
           font-weight: 700;
-          margin-right: 16px;
+          margin-right: 2rem;
         }
       `}</style>
-    </div>
+    </>
   );
 }

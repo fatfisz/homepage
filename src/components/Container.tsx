@@ -7,11 +7,9 @@ export function Container({ children, ...props }: { children: ReactNode }): Reac
 
       <style jsx>{`
         .container {
-          margin-left: auto;
-          margin-right: auto;
+          margin: 0 auto;
           max-width: 100%;
-          padding-left: 16px;
-          padding-right: 16px;
+          padding: 0 1rem;
           position: relative;
         }
         .container:before,

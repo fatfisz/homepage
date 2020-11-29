@@ -1,4 +1,4 @@
-import { grey200, grey600, indigo300 } from 'const/colors';
+import { grey200, grey600, grey800, indigo300 } from 'const/colors';
 import { ReactElement } from 'react';
 
 export function GlobalStyles(): ReactElement {
@@ -19,6 +19,7 @@ export function GlobalStyles(): ReactElement {
       }
 
       body {
+        color: ${grey800};
         margin: 0;
       }
 
