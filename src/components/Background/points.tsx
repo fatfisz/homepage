@@ -110,11 +110,15 @@ export class Points {
     mouse: { x: number; y: number } | null,
   ): Generator<{ x: number; y: number; mass: number }, void, undefined> {
     if (mouse) {
-      yield {
-        x: mouse.x - this.xOffset,
-        y: mouse.y - this.yOffset,
-        mass: mouseMass,
-      };
+      for (const xOffset of [-this.width, 0, this.width]) {
+        for (const yOffset of [-this.height, 0, this.height]) {
+          yield {
+            x: mouse.x - this.xOffset + xOffset,
+            y: mouse.y - this.yOffset + yOffset,
+            mass: mouseMass,
+          };
+        }
+      }
     }
     const buckets: [bucket: Set<Point>, xOffset: number, yOffset: number][] = [
       [this.getBucket(point.x, point.y), 0, 0],
