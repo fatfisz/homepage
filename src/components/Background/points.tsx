@@ -25,15 +25,15 @@ export class Points {
   private points: Point[] = [];
   private width: number;
   private height: number;
-  private xOffset = 0;
-  private yOffset = 0;
+  private offsetX = 0;
+  private offsetY = 0;
   private buckets = new Map<string, Set<Point>>();
 
-  constructor(width: number, height: number, xOffset: number, yOffset: number) {
+  constructor(width: number, height: number, offsetX: number, offsetY: number) {
     this.width = width;
     this.height = height;
-    this.xOffset = xOffset;
-    this.yOffset = yOffset;
+    this.offsetX = offsetX;
+    this.offsetY = offsetY;
     this.ensurePointCount();
   }
 
@@ -46,15 +46,15 @@ export class Points {
     mouse: { x: number; y: number } | null,
     width: number,
     height: number,
-    xOffset: number,
-    yOffset: number,
+    offsetX: number,
+    offsetY: number,
   ): void {
     this.width = width;
     this.height = height;
     this.ensurePointCount();
-    this.handleOffsetDiff(this.xOffset - xOffset, this.yOffset - yOffset);
-    this.xOffset = xOffset;
-    this.yOffset = yOffset;
+    this.handleOffsetDiff(this.offsetX - offsetX, this.offsetY - offsetY);
+    this.offsetX = offsetX;
+    this.offsetY = offsetY;
     this.solve(dt, mouse);
     this.move(dt);
   }
@@ -86,10 +86,10 @@ export class Points {
     }
   }
 
-  private handleOffsetDiff(xDiff: number, yDiff: number): void {
+  private handleOffsetDiff(diffX: number, diffY: number): void {
     for (const point of this.points) {
-      point.dx += xDiff;
-      point.dy += yDiff;
+      point.dx += diffX;
+      point.dy += diffY;
     }
   }
 
@@ -101,13 +101,13 @@ export class Points {
   }
 
   private forEachNeighbor(dt: number, point: Point, mouseWithMass: PseudoPoint | null): void {
-    for (const xOffset of [-this.width, 0, this.width]) {
-      for (const yOffset of [-this.height, 0, this.height]) {
+    for (const offsetX of [-this.width, 0, this.width]) {
+      for (const offsetY of [-this.height, 0, this.height]) {
         if (mouseWithMass) {
-          this.solvePoint(dt, point, mouseWithMass, xOffset, yOffset);
+          this.solvePoint(dt, point, mouseWithMass, offsetX, offsetY);
         }
-        this.getBucket(point.x + xOffset, point.y + yOffset).forEach((neighbor) => {
-          this.solvePoint(dt, point, neighbor, -xOffset, -yOffset);
+        this.getBucket(point.x + offsetX, point.y + offsetY).forEach((neighbor) => {
+          this.solvePoint(dt, point, neighbor, -offsetX, -offsetY);
         });
       }
     }
@@ -117,15 +117,15 @@ export class Points {
     dt: number,
     point: Point,
     neighbor: PseudoPoint,
-    xOffset: number,
-    yOffset: number,
+    offsetX: number,
+    offsetY: number,
   ): void {
-    const xDiff = neighbor.x + xOffset - point.x;
-    const yDiff = neighbor.y + yOffset - point.y;
-    const dist = xDiff ** 2 + yDiff ** 2;
+    const diffX = neighbor.x - point.x + offsetX;
+    const diffY = neighbor.y - point.y + offsetY;
+    const dist = diffX ** 2 + diffY ** 2;
     if (neighbor !== point && dist <= bucketSize ** 2) {
       const force = (dt * point.mass * neighbor.mass) / dist;
-      const angle = Math.atan2(yDiff, xDiff);
+      const angle = Math.atan2(diffY, diffX);
       point.dx -= force * Math.cos(angle);
       point.dy -= force * Math.sin(angle);
     }
@@ -169,17 +169,17 @@ export class Points {
   }
 
   private addPointToBuckets(point: Point, x: number, y: number): void {
-    for (const xOffset of [-bucketSize, 0, bucketSize]) {
-      for (const yOffset of [-bucketSize, 0, bucketSize]) {
-        this.getBucket(x + xOffset, y + yOffset).add(point);
+    for (const offsetX of [-bucketSize, 0, bucketSize]) {
+      for (const offsetY of [-bucketSize, 0, bucketSize]) {
+        this.getBucket(x + offsetX, y + offsetY).add(point);
       }
     }
   }
 
   private deletePointFromBuckets(point: Point, x: number, y: number): void {
-    for (const xOffset of [-bucketSize, 0, bucketSize]) {
-      for (const yOffset of [-bucketSize, 0, bucketSize]) {
-        this.getBucket(x + xOffset, y + yOffset).delete(point);
+    for (const offsetX of [-bucketSize, 0, bucketSize]) {
+      for (const offsetY of [-bucketSize, 0, bucketSize]) {
+        this.getBucket(x + offsetX, y + offsetY).delete(point);
       }
     }
   }
