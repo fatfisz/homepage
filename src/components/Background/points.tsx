@@ -7,17 +7,19 @@ const mouseMass = 5000;
 
 const pointDensity = 1 / 10000;
 
-const maxForce = 1000;
-
-const dLimit = 1000;
-
-const dLimitDamp = 0.9;
+const maxForce = 500;
 
 const generalDamp = 0.99;
 
 const bucketSize = 200;
 
 const shapes = [triangle, circle, cross, square];
+
+interface PseudoPoint {
+  x: number;
+  y: number;
+  mass: number;
+}
 
 export class Points {
   private points: Point[] = [];
@@ -92,73 +94,40 @@ export class Points {
   }
 
   private solve(dt: number, mouse: { x: number; y: number } | null): void {
+    const mouseWithMass = mouse && { ...mouse, mass: mouseMass };
     for (const point of this.points) {
-      for (const neighbor of this.neighboringPoints(point, mouse)) {
-        const force = Math.min(
-          (point.mass * neighbor.mass) / distSquared(point, neighbor),
-          maxForce,
-        );
-        const angle = Math.atan2(neighbor.y - point.y, neighbor.x - point.x);
-        point.dx -= force * Math.cos(angle) * dt;
-        point.dy -= force * Math.sin(angle) * dt;
+      this.forEachNeighbor(dt, point, mouseWithMass);
+    }
+  }
+
+  private forEachNeighbor(dt: number, point: Point, mouseWithMass: PseudoPoint | null): void {
+    for (const xOffset of [-this.width, 0, this.width]) {
+      for (const yOffset of [-this.height, 0, this.height]) {
+        if (mouseWithMass) {
+          this.solvePoint(dt, point, mouseWithMass, xOffset, yOffset);
+        }
+        this.getBucket(point.x + xOffset, point.y + yOffset).forEach((neighbor) => {
+          this.solvePoint(dt, point, neighbor, -xOffset, -yOffset);
+        });
       }
     }
   }
 
-  private *neighboringPoints(
-    point: { x: number; y: number },
-    mouse: { x: number; y: number } | null,
-  ): Generator<{ x: number; y: number; mass: number }, void, undefined> {
-    if (mouse) {
-      for (const xOffset of [-this.width, 0, this.width]) {
-        for (const yOffset of [-this.height, 0, this.height]) {
-          yield { x: mouse.x + xOffset, y: mouse.y + yOffset, mass: mouseMass };
-        }
-      }
-    }
-    const buckets: [bucket: Set<Point>, xOffset: number, yOffset: number][] = [
-      [this.getBucket(point.x, point.y), 0, 0],
-    ];
-    if (point.x - bucketSize < 0) {
-      buckets.push([this.getBucket(point.x + this.width, point.y), -this.width, 0]);
-    }
-    if (point.x + bucketSize >= this.width) {
-      buckets.push([this.getBucket(-1, point.y), this.width, 0]);
-    }
-    if (point.y - bucketSize < 0) {
-      buckets.push([this.getBucket(point.x, point.y + this.height), 0, -this.height]);
-    }
-    if (point.y + bucketSize >= this.height) {
-      buckets.push([this.getBucket(point.x, -1), 0, this.height]);
-    }
-    if (point.x - bucketSize < 0 && point.y - bucketSize < 0) {
-      buckets.push([
-        this.getBucket(point.x + this.width, point.y + this.height),
-        -this.width,
-        -this.height,
-      ]);
-    }
-    if (point.x - bucketSize < 0 && point.y + bucketSize >= this.height) {
-      buckets.push([this.getBucket(point.x + this.width, -1), -this.width, this.height]);
-    }
-    if (point.x + bucketSize >= this.width && point.y - bucketSize < 0) {
-      buckets.push([this.getBucket(-1, point.y + this.height), this.width, -this.height]);
-    }
-    if (point.x + bucketSize >= this.width && point.y + bucketSize >= this.height) {
-      buckets.push([this.getBucket(-1, -1), this.width, this.height]);
-    }
-
-    for (const [bucket, xOffset, yOffset] of buckets) {
-      for (const neighbor of bucket) {
-        const pseudoPoint = {
-          x: neighbor.x + xOffset,
-          y: neighbor.y + yOffset,
-          mass: neighbor.mass,
-        };
-        if (neighbor !== point && distSquared(point, pseudoPoint) <= bucketSize ** 2) {
-          yield pseudoPoint;
-        }
-      }
+  private solvePoint(
+    dt: number,
+    point: Point,
+    neighbor: PseudoPoint,
+    xOffset: number,
+    yOffset: number,
+  ): void {
+    const xDiff = neighbor.x + xOffset - point.x;
+    const yDiff = neighbor.y + yOffset - point.y;
+    const dist = xDiff ** 2 + yDiff ** 2;
+    if (neighbor !== point && dist <= bucketSize ** 2) {
+      const force = (dt * point.mass * neighbor.mass) / dist;
+      const angle = Math.atan2(yDiff, xDiff);
+      point.dx -= force * Math.cos(angle);
+      point.dy -= force * Math.sin(angle);
     }
   }
 
@@ -167,18 +136,12 @@ export class Points {
       const prevX = point.x;
       const prevY = point.y;
 
-      if (point.dx > dLimit) {
-        point.dx *= dLimitDamp;
+      if (point.dx ** 2 + point.dy ** 2 > maxForce ** 2) {
+        const factor = maxForce / (point.dx ** 2 + point.dy ** 2) ** 0.5;
+        point.dx *= factor;
+        point.dy *= factor;
       }
-      if (point.dx < -dLimit) {
-        point.dx *= dLimitDamp;
-      }
-      if (point.dy > dLimit) {
-        point.dy *= dLimitDamp;
-      }
-      if (point.dy < -dLimit) {
-        point.dy *= dLimitDamp;
-      }
+
       point.dx *= generalDamp;
       point.dy *= generalDamp;
       point.x += point.dx * dt;
@@ -206,42 +169,33 @@ export class Points {
   }
 
   private addPointToBuckets(point: Point, x: number, y: number): void {
-    this.getBucket(x - bucketSize, y - bucketSize).add(point);
-    this.getBucket(x - bucketSize, y).add(point);
-    this.getBucket(x - bucketSize, y + bucketSize).add(point);
-    this.getBucket(x, y - bucketSize).add(point);
-    this.getBucket(x, y).add(point);
-    this.getBucket(x, y + bucketSize).add(point);
-    this.getBucket(x + bucketSize, y - bucketSize).add(point);
-    this.getBucket(x + bucketSize, y).add(point);
-    this.getBucket(x + bucketSize, y + bucketSize).add(point);
+    for (const xOffset of [-bucketSize, 0, bucketSize]) {
+      for (const yOffset of [-bucketSize, 0, bucketSize]) {
+        this.getBucket(x + xOffset, y + yOffset).add(point);
+      }
+    }
   }
 
   private deletePointFromBuckets(point: Point, x: number, y: number): void {
-    this.getBucket(x - bucketSize, y - bucketSize).delete(point);
-    this.getBucket(x - bucketSize, y).delete(point);
-    this.getBucket(x - bucketSize, y + bucketSize).delete(point);
-    this.getBucket(x, y - bucketSize).delete(point);
-    this.getBucket(x, y).delete(point);
-    this.getBucket(x, y + bucketSize).delete(point);
-    this.getBucket(x + bucketSize, y - bucketSize).delete(point);
-    this.getBucket(x + bucketSize, y).delete(point);
-    this.getBucket(x + bucketSize, y + bucketSize).delete(point);
+    for (const xOffset of [-bucketSize, 0, bucketSize]) {
+      for (const yOffset of [-bucketSize, 0, bucketSize]) {
+        this.getBucket(x + xOffset, y + yOffset).delete(point);
+      }
+    }
   }
 
   private getBucket(x: number, y: number): Set<Point> {
     const hash = positionToHash(x, y);
-    if (!this.buckets.has(hash)) {
-      this.buckets.set(hash, new Set());
+    const bucket = this.buckets.get(hash);
+    if (bucket) {
+      return bucket;
     }
-    return this.buckets.get(hash)!;
+    const newBucket = new Set<Point>();
+    this.buckets.set(hash, newBucket);
+    return newBucket;
   }
 }
 
 function positionToHash(x: number, y: number): string {
   return `${Math.floor(x / bucketSize)},${Math.floor(y / bucketSize)}`;
-}
-
-function distSquared(first: { x: number; y: number }, second: { x: number; y: number }): number {
-  return (first.x - second.x) ** 2 + (first.y - second.y) ** 2;
 }

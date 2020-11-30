@@ -2,8 +2,11 @@ import { grey100 } from 'const/colors';
 
 import { Draw } from './types';
 
-const lineWidth = 5;
 const size = 20;
+
+const lineWidth = 5;
+
+export const doublingThreshold = size + lineWidth;
 
 export function startDraw(context: CanvasRenderingContext2D): void {
   context.lineWidth = lineWidth;

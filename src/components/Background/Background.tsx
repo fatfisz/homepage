@@ -1,10 +1,8 @@
 import { ReactElement, useEffect, useRef } from 'react';
 
 import { Points } from './points';
-import { finishDraw, startDraw } from './shapes';
+import { doublingThreshold, finishDraw, startDraw } from './shapes';
 import { useMousePosition } from './useMousePosition';
-
-const doublingThreshold = 50;
 
 export function Background(): ReactElement {
   const root = useRef<HTMLCanvasElement>(null);
