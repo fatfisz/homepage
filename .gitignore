@@ -7,6 +7,5 @@ node_modules
 private
 
 # Server files
-install
-nginx.conf
-process.json
+deploy
+ecosystem.config.js
